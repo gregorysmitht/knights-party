@@ -72,13 +72,24 @@ h1 .ch{display:inline-block;opacity:0;transform-origin:50% 90%}
 .confetti i{position:absolute;top:-4%;width:7px;height:12px;border-radius:2px;background:#fff;opacity:.85}
 @media (prefers-reduced-motion:no-preference){.confetti.on i{animation:fall var(--d,7s) linear var(--delay,0s) infinite}}
 @keyframes fall{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(18px,25vh) rotate(140deg)}50%{transform:translate(-14px,50vh) rotate(260deg)}75%{transform:translate(16px,78vh) rotate(400deg)}100%{transform:translate(0,106vh) rotate(540deg)}}
-.bot{position:absolute;left:0;right:0;bottom:4%;padding:0 60px 0 7%;z-index:3;display:flex;align-items:flex-end;gap:14px}
+.bot{position:absolute;left:0;right:0;bottom:min(4%,22px);padding:0 60px 0 7%;z-index:3;display:flex;align-items:flex-end;gap:14px}
 .reveal{display:block;overflow:hidden}
 .reveal>span{display:block;transform:translateY(105%)}
 .dbig>span>span{display:flex;flex-direction:column;align-items:center;background:#fff;color:var(--knight);border-radius:14px;padding:6px 10px 8px;min-width:min(22vw,11svh,96px)}
 .dbig b{font:900 min(21vw,10.5svh,90px)/.82 var(--display)}
 .dbig i{font:800 min(5.4vw,2.7svh,22px)/1 var(--display);font-style:normal;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
 .drest{min-width:0}
+.court{container-type:size}
+/* On short courts the whole team steps up a little so the date never touches the front row */
+.team-stage,.fx,.ball,.shadow,.ring{translate:0 var(--lift,0px)}
+@supports (container-type:size){
+  .dbig>span>span{min-width:min(22vw,11.5cqh,96px)}
+  .dbig b{font-size:min(21vw,11cqh,90px)}
+  .dbig i{font-size:min(5.4vw,2.9cqh,22px)}
+  .d1{font-size:min(11vw,5.6cqh,50px)}
+  .d2{font-size:min(7.4vw,4.1cqh,32px)}
+  .d3{font-size:min(3.9vw,2.3cqh,16px)}
+}
 .d1{font:900 min(11vw,5.2svh,50px)/.9 var(--display);text-transform:uppercase}
 .d2{font:800 min(7.4vw,3.6svh,32px)/.95 var(--display);text-transform:uppercase;color:#BFE3F7;margin-top:4px;white-space:nowrap}
 .d3{font:600 min(3.9vw,1.95svh,16px)/1.25 var(--body);color:#fff;margin-top:7px}
@@ -111,7 +122,10 @@ body:not(.locked) .hint-wrap{display:none}
 body.locked .hero{height:100svh;height:100dvh;min-height:540px;max-height:none;padding-bottom:calc(var(--dock) + 6px)}
 body.locked{overflow:hidden}
 @supports (height:100svh){body.locked .hero{height:100svh}}
-body.locked .cue,body.locked .ticker-wrap,body.locked main,body.locked footer{display:none}
+body:not(.locked) .hero{height:100svh;height:100dvh;min-height:600px;max-height:none;padding-bottom:calc(var(--dock) + 6px);display:flex;flex-direction:column}
+body:not(.locked) .court{height:auto;flex:1;min-height:0;width:100%}
+body.locked .more{display:none}
+body.locked main,body.locked footer{display:none}
 body.locked .dock-btn{background:var(--cape);color:#fff}
 
 /* ================= Envelope ================= */
@@ -162,11 +176,19 @@ h2{font:900 44px/.9 var(--display);text-transform:uppercase;margin:0 0 18px}
 .sec>h2:not(.sr):after{content:"";flex:1;height:3px;background:#23272D;border-radius:2px}
 .lineup-sec .sec>h2:after{background:rgba(255,255,255,.28)}
 
+/* Bottom strip of the hero: the floor keeps going, then the banner and the scroll cue */
+.more{flex:none;width:100%;max-width:470px;margin:0 auto;background:linear-gradient(180deg,#00478A,#00336A);overflow:hidden;padding:0 0 4px}
+.more .ticker-wrap{padding:4px 0 6px}
+.more .track span{font-size:24px}
+.more .track i{width:15px;height:15px}
+.more .ticker{padding:6px 0;border-width:3px 0}
 /* Scroll cue */
-.cue{display:flex;flex-direction:column;align-items:center;gap:0;margin:6px auto 0;background:none;border:0;color:#fff;font-weight:700;font-size:14px;letter-spacing:.01em;opacity:0;transition:opacity .3s}
+.cue{display:flex;flex-direction:column;align-items:center;gap:0;margin:0 auto;padding:2px 16px 0;background:none;border:0;color:#fff;opacity:0;transition:opacity .3s}
+.cue b{display:flex;align-items:center;gap:6px;font:900 22px/1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.cue small{font:600 12.5px/1.2 var(--body);color:#BFE3F7;margin-top:3px}
 .cue.on{opacity:1}
 .cue.off{opacity:0;pointer-events:none}
-.cue svg{width:26px;height:26px;fill:none;stroke:var(--cape);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.cue svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
 @media (prefers-reduced-motion:no-preference){.cue.on svg{animation:nudge 1.4s ease-in-out infinite}}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 
@@ -459,11 +481,12 @@ body.kb .sheet .step .sub{margin-bottom:12px}
       </div>
     </div>
   </div>
+  <div class="more">
+    <div class="ticker-wrap" aria-hidden="true"><div class="ticker"><div class="track" id="ticker"></div></div></div>
+    <button class="cue" id="cue" type="button" aria-label="Scroll down for details, directions and the food sign-up"><b>Scroll for details<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></b><small>Directions · Food sign-up · Who's coming</small></button>
+  </div>
 </header>
 
-<button class="cue" id="cue" type="button" aria-label="Scroll down for details"><span>Scroll for details</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
-
-<div class="ticker-wrap" aria-hidden="true"><div class="ticker"><div class="track" id="ticker"></div></div></div>
 
 <main>
   <section class="sec" id="mine" aria-labelledby="h-mine" hidden>
@@ -856,6 +879,8 @@ function fitTitle(){
   const h1 = $('#title'), top = h1.parentElement;
   const avail = (top.clientWidth - parseFloat(getComputedStyle(top).paddingLeft) * 2) * 0.97;
   $$('#title .w').forEach((w) => { w.style.fontSize = '100px'; const wd = w.offsetWidth; w.style.fontSize = Math.min(100 * avail / wd, court.clientHeight * 0.075) + 'px'; });
+  const lift = Math.max(0, Math.min(0.035, (1.5 - court.clientHeight / court.clientWidth) * 0.14));
+  court.style.setProperty('--lift', -Math.round(lift * court.clientHeight) + 'px');
   const cb = court.getBoundingClientRect(), hb = h1.getBoundingClientRect();
   $('#hbanner').style.top = (hb.bottom - cb.top + 4) + 'px';
 }
@@ -865,8 +890,8 @@ addEventListener('resize', () => { fitTitle(); if (qT === null && !playing) seek
 /* ---------- Locked until RSVP ---------- */
 
 /* ---------- Scroll cue ---------- */
-$('#cue').onclick = () => $('.gamecard').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'start' });
-addEventListener('scroll', () => { if (scrollY > 80) $('#cue').classList.add('off'); }, { passive: true });
+$('#cue').onclick = () => { const first = $$('main > .sec').find((x) => !x.hidden); (first || $('main')).scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'start' }); };
+addEventListener('scroll', () => $('#cue').classList.toggle('off', scrollY > 80), { passive: true });
 
 /* ---------- Ticker ---------- */
 (() => {
