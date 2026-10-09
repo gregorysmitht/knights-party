@@ -328,6 +328,9 @@ body.sheet-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .find-row{margin-top:18px;color:var(--muted);font-size:15px}
 
 .preview{display:grid;place-items:center;margin:2px 0 18px}
+body.kb .sheet .preview{display:none}
+body.kb .sheet .step h3{font-size:30px;margin:4px 0 6px}
+body.kb .sheet .step .sub{margin-bottom:12px}
 .preview svg{width:150px;height:150px;overflow:visible}
 .field{display:grid;gap:6px;margin-bottom:16px}
 .field>span{font-weight:700;font-size:15px}
@@ -899,7 +902,16 @@ function setVVH(){
     vvRaf = 0; const vv = window.visualViewport, st = document.documentElement.style;
     st.setProperty('--vvh', Math.round(vv ? vv.height : innerHeight) + 'px');
     st.setProperty('--vvt', Math.round(vv ? vv.offsetTop : 0) + 'px');
+    const kb = !!vv && vv.height < innerHeight * 0.75; document.body.classList.toggle('kb', kb);
+    if (kb) keepFieldVisible();
   });
+}
+function keepFieldVisible(){
+  const el = document.activeElement; if (!el || !el.matches('input,textarea')) return;
+  const body = el.closest('.s-body'); if (!body) return;
+  const r = el.getBoundingClientRect(), b = body.getBoundingClientRect();
+  const label = el.closest('label') || el.closest('li') || el, lr = label.getBoundingClientRect();
+  if (lr.top < b.top || r.bottom > b.bottom - 8) body.scrollTop += lr.top - b.top - 8;
 }
 setVVH(); if (window.visualViewport){ visualViewport.addEventListener('resize', setVVH); visualViewport.addEventListener('scroll', setVVH); }
 /* Freeze the page behind an open sheet (iOS ignores overflow:hidden, so pin the body and remember the scroll). */
@@ -908,8 +920,8 @@ function lockPage(){ if (document.body.classList.contains('sheet-open')) return;
 function unlockPage(){ if (!document.body.classList.contains('sheet-open')) return; document.body.classList.remove('sheet-open'); document.body.style.top = ''; window.scrollTo(0, lockY); }
 let lastFocus = null;
 document.addEventListener('focusin', (e) => {
-  const el = e.target, body = el.closest && el.closest('.s-body'); if (!body || !el.matches('input,textarea')) return;
-  setTimeout(() => { if (document.activeElement !== el) return; const r = el.getBoundingClientRect(), b = body.getBoundingClientRect(); if (r.top < b.top + 8 || r.bottom > b.bottom - 8) el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 350);
+  const el = e.target; if (!el.closest || !el.closest('.s-body') || !el.matches('input,textarea')) return;
+  [120, 350, 700].forEach((ms) => setTimeout(() => { if (document.activeElement === el) keepFieldVisible(); }, ms));
 });
 async function openSheet(sheet, scrim){
   lastFocus = document.activeElement;
