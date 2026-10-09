@@ -60,11 +60,11 @@ button{cursor:pointer}
 .net .ant{position:absolute;top:-34px;height:calc(100% + 42px);width:5px;background:repeating-linear-gradient(180deg,#E53935 0 9px,#fff 9px 18px);border-radius:3px}
 .net .ant.l{left:-3px}.net .ant.r{right:-3px}
 
-.top{position:absolute;left:0;right:0;top:0;padding:calc(var(--st) + 6%) 7% 0;z-index:3}
-h1{margin:0;font:900 60px/.84 var(--display);text-transform:uppercase;letter-spacing:-.005em;transform:rotate(-2.5deg);transform-origin:50% 50%;width:max-content}
+.top{position:absolute;left:0;right:0;top:0;padding:calc(var(--st) + 5.5%) 6% 0;z-index:3}
+h1{margin:0 auto;font:900 60px/.84 var(--display);text-transform:uppercase;letter-spacing:-.005em;transform:rotate(-2.5deg);transform-origin:50% 50%;width:max-content}
 h1 .w{display:block;width:max-content;white-space:nowrap}
 h1 .l1{color:#fff;text-shadow:0 .055em 0 var(--knight),0 .11em 0 #003366}
-h1 .l2{color:transparent;-webkit-text-stroke:2.5px #fff;paint-order:stroke;margin-top:.06em;transform:translateX(120%);letter-spacing:.01em}
+h1 .l2{color:transparent;-webkit-text-stroke:max(2.5px,.032em) #fff;paint-order:stroke;margin-top:.06em;transform:translateX(120%);letter-spacing:.01em}
 h1 .ch{display:inline-block;opacity:0;transform-origin:50% 90%}
 
 .confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:6;opacity:0;transition:opacity .6s}
@@ -881,7 +881,13 @@ Promise.all([
 function fitTitle(){
   const h1 = $('#title'), top = h1.parentElement;
   const avail = (top.clientWidth - parseFloat(getComputedStyle(top).paddingLeft) * 2) * 0.97;
-  $$('#title .w').forEach((w) => { w.style.fontSize = '100px'; const wd = w.offsetWidth; w.style.fontSize = Math.min(100 * avail / wd, court.clientHeight * 0.075) + 'px'; });
+  // poster lockup: both lines run the full width, so VOLLEYBALL comes out bigger than GENEVA KNIGHTS
+  const lines = $$('#title .w');
+  const sizes = lines.map((w) => { w.style.fontSize = '100px'; return 100 * avail / w.offsetWidth; });
+  lines.forEach((w, i) => { w.style.fontSize = sizes[i] + 'px'; });
+  // on short screens shrink the whole lockup so it stays above the net
+  const budget = net.offsetTop - parseFloat(getComputedStyle(top).paddingTop) - 2;
+  if (h1.offsetHeight > budget){ const k = budget / h1.offsetHeight; lines.forEach((w, i) => { w.style.fontSize = sizes[i] * k + 'px'; }); }
   const lift = Math.max(0, Math.min(0.035, (1.5 - court.clientHeight / court.clientWidth) * 0.14));
   court.style.setProperty('--lift', -Math.round(lift * court.clientHeight) + 'px');
   const cb = court.getBoundingClientRect(), hb = h1.getBoundingClientRect();
