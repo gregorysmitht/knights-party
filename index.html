@@ -72,13 +72,15 @@ h1 .ch{display:inline-block;opacity:0;transform-origin:50% 90%}
 .confetti i{position:absolute;top:-4%;width:7px;height:12px;border-radius:2px;background:#fff;opacity:.85}
 @media (prefers-reduced-motion:no-preference){.confetti.on i{animation:fall var(--d,7s) linear var(--delay,0s) infinite}}
 @keyframes fall{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(18px,25vh) rotate(140deg)}50%{transform:translate(-14px,50vh) rotate(260deg)}75%{transform:translate(16px,78vh) rotate(400deg)}100%{transform:translate(0,106vh) rotate(540deg)}}
-.bot{position:absolute;left:0;right:0;bottom:min(4%,22px);padding:0 60px 0 7%;z-index:3;display:flex;align-items:flex-end;gap:14px}
+.bot{position:absolute;left:0;right:0;bottom:min(4%,22px);padding:0 60px 0 7%;z-index:3;display:flex;align-items:stretch;gap:14px}
 .reveal{display:block;overflow:hidden}
 .reveal>span{display:block;transform:translateY(105%)}
 .dbig>span>span{display:flex;flex-direction:column;align-items:center;background:#fff;color:var(--knight);border-radius:14px;padding:6px 10px 8px;min-width:min(22vw,11svh,96px)}
 .dbig b{font:900 min(21vw,10.5svh,90px)/.82 var(--display)}
 .dbig i{font:800 min(5.4vw,2.7svh,22px)/1 var(--display);font-style:normal;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
-.drest{min-width:0}
+.drest{min-width:0;display:flex;flex-direction:column;justify-content:space-between;padding:1px 0 2px}
+.drest .reveal{flex:none}
+.d3{white-space:nowrap}
 .court{container-type:size}
 /* On short courts the whole team steps up a little so the date never touches the front row */
 .team-stage,.fx,.ball,.shadow,.ring{translate:0 var(--lift,0px)}
@@ -478,7 +480,7 @@ body.kb .sheet .step .sub{margin-bottom:12px}
       <div class="drest">
         <span class="reveal"><span class="d1">Sunday</span></span>
         <span class="reveal"><span class="d2">3:30 to 5:30 PM</span></span>
-        <span class="reveal"><span class="d3">The Smiths' house, Casselberry</span></span>
+        <span class="reveal"><span class="d3">The Smiths' house</span></span>
       </div>
     </div>
   </div>
