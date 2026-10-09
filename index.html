@@ -755,7 +755,7 @@ function trackAt(keys, t, idx){
 }
 const bumpCurve = (dt) => dt > 0 && dt < 0.32 ? Math.sin(Math.PI * dt / 0.32) : 0;
 function draw(el, L, u){ if (u >= 1){ el.style.strokeDasharray = 'none'; return; } el.style.strokeDasharray = `${L} ${L}`; el.style.strokeDashoffset = L * (1 - u); }
-const T_TITLE = 0.3, T_FLASH = 3.3, DUR = 3.6;
+const T_TITLE = 0.3, T_FLASH = 3.3, DUR = 4.2;
 function seek(t, idle = 0){
   const W = court.clientWidth, H = court.clientHeight;
   // the gym: floor rolls out from the net line, lines draw, net drops onto its posts
