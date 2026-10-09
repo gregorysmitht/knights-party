@@ -297,8 +297,9 @@ footer{padding:40px 20px calc(var(--dock) + 30px);text-align:center;color:var(--
 .f-host{margin:16px 0 0;font-weight:600}
 
 /* ================= Sheets ================= */
-.scrim{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.6);opacity:0}
-.sheet{position:fixed;left:0;right:0;z-index:31;top:calc(var(--st) + 10px);height:calc(var(--vvh,100svh) - var(--st) - 10px);
+.scrim{position:fixed;inset:-20vh 0;z-index:30;background:rgba(0,0,0,.6);opacity:0}
+body.sheet-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+.sheet{position:fixed;left:0;right:0;z-index:31;top:calc(var(--vvt,0px) + var(--st) + 10px);height:calc(var(--vvh,100svh) - var(--st) - 10px);
   max-width:520px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:22px 22px 0 0;display:flex;flex-direction:column;transform:translateY(105%);will-change:transform}
 .sheet.short{top:auto;bottom:0;height:auto;padding-bottom:var(--sb);z-index:33}
 #scrim2{z-index:32}
@@ -890,18 +891,34 @@ new IntersectionObserver((es, ob) => es.forEach((e) => {
 }), { threshold: 0.6 }).observe($('#score'));
 
 /* ---------- Sheets ---------- */
-function setVVH(){ const vv = window.visualViewport; document.documentElement.style.setProperty('--vvh', (vv ? vv.height : innerHeight) + 'px'); }
-setVVH(); if (window.visualViewport) visualViewport.addEventListener('resize', setVVH);
+/* The sheet follows the visual viewport, so when the phone keyboard opens it shrinks and stays put instead of the page jumping. */
+let vvRaf = 0;
+function setVVH(){
+  if (vvRaf) return; vvRaf = requestAnimationFrame(() => {
+    vvRaf = 0; const vv = window.visualViewport, st = document.documentElement.style;
+    st.setProperty('--vvh', Math.round(vv ? vv.height : innerHeight) + 'px');
+    st.setProperty('--vvt', Math.round(vv ? vv.offsetTop : 0) + 'px');
+  });
+}
+setVVH(); if (window.visualViewport){ visualViewport.addEventListener('resize', setVVH); visualViewport.addEventListener('scroll', setVVH); }
+/* Freeze the page behind an open sheet (iOS ignores overflow:hidden, so pin the body and remember the scroll). */
+let lockY = 0;
+function lockPage(){ if (document.body.classList.contains('sheet-open')) return; lockY = window.scrollY; document.body.style.top = -lockY + 'px'; document.body.classList.add('sheet-open'); }
+function unlockPage(){ if (!document.body.classList.contains('sheet-open')) return; document.body.classList.remove('sheet-open'); document.body.style.top = ''; window.scrollTo(0, lockY); }
 let lastFocus = null;
+document.addEventListener('focusin', (e) => {
+  const el = e.target, body = el.closest && el.closest('.s-body'); if (!body || !el.matches('input,textarea')) return;
+  setTimeout(() => { if (document.activeElement !== el) return; const r = el.getBoundingClientRect(), b = body.getBoundingClientRect(); if (r.top < b.top + 8 || r.bottom > b.bottom - 8) el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 350);
+});
 async function openSheet(sheet, scrim){
   lastFocus = document.activeElement;
-  scrim.hidden = false; sheet.hidden = false; document.documentElement.style.overflow = 'hidden';
+  lockPage(); scrim.hidden = false; sheet.hidden = false;
   await tween(0, 1, (u) => { sheet.style.transform = `translateY(${(1 - u) * 105}%)`; scrim.style.opacity = clamp(u); }, { k: 300, d: 32, dur: 0.6 });
 }
 async function closeSheet(sheet, scrim){
   const cur = sheet.style.transform.match(/translateY\(([\d.]+)/); const from = cur ? parseFloat(cur[1]) / 105 : 0;
   await tween(from, 1, (u) => { sheet.style.transform = `translateY(${u * 105}%)`; scrim.style.opacity = clamp(1 - u); }, { k: 400, d: 40, dur: 0.35 });
-  sheet.hidden = true; scrim.hidden = true; if ($$('.sheet').every((x) => x.hidden)) document.documentElement.style.overflow = '';
+  sheet.hidden = true; scrim.hidden = true; if ($$('.sheet').every((x) => x.hidden)) unlockPage();
   if (lastFocus) lastFocus.focus({ preventScroll: true });
 }
 function dragToClose(sheet, handles, onClose){
