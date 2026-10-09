@@ -1,0 +1,1322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Knights Volleyball End of Season Party</title>
+<meta name="description" content="Celebrate the girls and a wonderful season. Sunday, Oct 25, 3:30 to 5:30 PM. RSVP and sign up to bring something to share.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Knights Volleyball End of Season Party">
+<meta property="og:description" content="Sunday, Oct 25, 3:30 to 5:30 PM. Tap to RSVP and sign up to bring something to share.">
+<meta property="og:image" content="https://knights-party.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Knights Party">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000; --white:#fff; --knight:#0059A3; --deep:#003C73; --cape:#1A93D0;
+  --steel:#A9B4C0; --ink:#000; --muted:#56606C; --paper:#fff;
+  --display:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;
+  --body:Barlow,"Helvetica Neue",Arial,sans-serif;
+  --st:env(safe-area-inset-top,0px); --sb:env(safe-area-inset-bottom,0px);
+  --dock:calc(84px + var(--sb));
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;background:var(--black)}
+body{margin:0;background:var(--black);color:var(--white);font:400 17px/1.45 var(--body);overscroll-behavior-y:none}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--cape);outline-offset:3px}
+
+/* ================= Opening: the court ================= */
+.hero{position:relative;height:68svh;min-height:460px;max-height:720px;padding:calc(var(--st) + 12px) 12px 0;background:var(--black);overflow:hidden}
+.court{position:relative;height:100%;max-width:470px;margin:0 auto;overflow:hidden;background:radial-gradient(110% 55% at 50% 30%,#10345F 0%,#071A33 45%,#000 100%)}
+.floor{position:absolute;left:-20px;right:-20px;top:43%;bottom:-2px;transform-origin:50% 0;transform:scaleY(0);
+  background:radial-gradient(70% 90% at 50% 0%,rgba(26,147,208,.5),transparent 60%),linear-gradient(180deg,#0A66B8 0%,#0059A3 35%,#00478A 100%)}
+.floor:after{content:"";position:absolute;left:0;right:0;top:0;height:14%;background:linear-gradient(180deg,rgba(0,0,0,.45),transparent)}
+.lines{position:absolute;left:0;right:0;top:43%;bottom:0;width:100%;height:57%;overflow:visible}
+.lines path{fill:none;stroke:#fff;stroke-width:4;vector-effect:non-scaling-stroke}
+.lines .atk{stroke-width:3;stroke:rgba(255,255,255,.9)}
+.net{position:absolute;left:6%;right:6%;top:27%;height:16%;z-index:1;transform:translateY(-110vh);will-change:transform;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.62) 0 1.5px,transparent 1.5px 11px),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.62) 0 1.5px,transparent 1.5px 11px);
+  border-top:9px solid #fff;border-bottom:5px solid #fff;box-shadow:0 22px 34px rgba(0,0,0,.35)}
+.net:before,.net:after{content:"";position:absolute;top:-9px;bottom:-5px;width:9px;background:#fff}
+.net:before{left:0}.net:after{right:0}
+.net .pole{position:absolute;top:-26px;bottom:-5px;width:8px;background:linear-gradient(90deg,#C9D1DA,#fff 45%,#8E9AA8);border-radius:4px}
+.net .pole.l{left:-15px}.net .pole.r{right:-15px}
+.net .ant{position:absolute;top:-34px;height:calc(100% + 42px);width:5px;background:repeating-linear-gradient(180deg,#E53935 0 9px,#fff 9px 18px);border-radius:3px}
+.net .ant.l{left:-3px}.net .ant.r{right:-3px}
+
+.top{position:absolute;left:0;right:0;top:0;padding:7% 7% 0;z-index:3}
+h1{margin:0;font:900 60px/.84 var(--display);text-transform:uppercase;letter-spacing:-.005em;transform:rotate(-2.5deg);transform-origin:50% 50%;width:max-content}
+h1 .w{display:block;width:max-content;white-space:nowrap}
+h1 .l1{color:#fff;text-shadow:0 .055em 0 var(--knight),0 .11em 0 #003366}
+h1 .l2{color:transparent;-webkit-text-stroke:2.5px #fff;paint-order:stroke;margin-top:.06em;transform:translateX(120%);letter-spacing:.01em}
+h1 .ch{display:inline-block;opacity:0;transform-origin:50% 90%}
+
+.confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:6;opacity:0;transition:opacity .6s}
+.confetti.on{opacity:1}
+.confetti i{position:absolute;top:-4%;width:7px;height:12px;border-radius:2px;background:#fff;opacity:.85}
+@media (prefers-reduced-motion:no-preference){.confetti.on i{animation:fall var(--d,7s) linear var(--delay,0s) infinite}}
+@keyframes fall{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(18px,25vh) rotate(140deg)}50%{transform:translate(-14px,50vh) rotate(260deg)}75%{transform:translate(16px,78vh) rotate(400deg)}100%{transform:translate(0,106vh) rotate(540deg)}}
+.bot{position:absolute;left:0;right:0;bottom:4%;padding:0 60px 0 7%;z-index:3;display:flex;align-items:flex-end;gap:14px}
+.reveal{display:block;overflow:hidden}
+.reveal>span{display:block;transform:translateY(105%)}
+.dbig>span>span{display:flex;flex-direction:column;align-items:center;background:#fff;color:var(--knight);border-radius:14px;padding:6px 10px 8px;min-width:min(22vw,11svh,96px)}
+.dbig b{font:900 min(21vw,10.5svh,90px)/.82 var(--display)}
+.dbig i{font:800 min(5.4vw,2.7svh,22px)/1 var(--display);font-style:normal;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.drest{min-width:0}
+.d1{font:900 min(11vw,5.2svh,50px)/.9 var(--display);text-transform:uppercase}
+.d2{font:800 min(7.4vw,3.6svh,32px)/.95 var(--display);text-transform:uppercase;color:#BFE3F7;margin-top:4px;white-space:nowrap}
+.d3{font:600 min(3.9vw,1.95svh,16px)/1.25 var(--body);color:#fff;margin-top:7px}
+.hbanner{position:absolute;left:-6%;right:-6%;top:17.5%;z-index:4;transform:rotate(-2.5deg)}
+.hb-in{background:#fff;color:#000;border-top:4px solid var(--cape);border-bottom:4px solid var(--cape);padding:6px 0;overflow:hidden;transform:translateX(110%)}
+.hb-in .track span{font:900 26px/1 var(--display);text-transform:uppercase;padding:0 14px}
+.hb-in .track i{width:14px;height:14px;background:var(--knight)}
+.team-stage{position:absolute;inset:0;pointer-events:none;z-index:2}
+.music{position:absolute;right:12px;bottom:12px;z-index:7;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#0059A3;display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+.music svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.music.on{background:var(--cape);color:#fff}
+.actor{position:absolute;left:0;top:0;height:min(26%,27vw,128px);opacity:0;will-change:transform;filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))}
+.actor img{height:100%;width:auto;display:block;pointer-events:none;-webkit-user-drag:none}
+.fx{position:absolute;inset:0;pointer-events:none;z-index:4}
+.burst{position:absolute;left:0;top:0;width:70px;height:70px;margin:-35px 0 0 -35px;opacity:0}
+.burst svg{width:100%;height:100%;display:block;overflow:visible}
+.lring{position:absolute;left:0;top:0;width:90px;height:26px;margin:-13px 0 0 -45px;border:3px solid rgba(255,255,255,.9);border-radius:50%;opacity:0}
+.flash{position:absolute;inset:-20px;background:#fff;opacity:0;pointer-events:none;z-index:6}
+.replay{position:absolute;right:10px;bottom:10px;z-index:5;border:0;background:rgba(0,0,0,.35);color:#fff;border-radius:999px;padding:7px 12px;font-weight:700;font-size:13px;opacity:0;pointer-events:none}
+.replay.on{opacity:1;pointer-events:auto}
+.ball{position:absolute;left:0;top:0;width:11%;max-width:46px;aspect-ratio:1;margin:-5.5% 0 0 -5.5%;opacity:0;z-index:3}
+.ball svg{display:block;width:100%;height:100%}
+.shadow{position:absolute;left:0;top:0;width:11%;max-width:48px;aspect-ratio:2.4;margin:-2.3% 0 0 -5.5%;border-radius:50%;background:rgba(0,0,0,.42);filter:blur(2px);opacity:0}
+.ring{position:absolute;left:0;top:0;width:40px;height:40px;margin:-20px 0 0 -20px;border:3px solid #fff;border-radius:50%;opacity:0}
+
+/* Locked: only the opening shows until the family RSVPs */
+.hint{padding-right:84px;font:600 14px/1.35 var(--body);color:#BFE3F7;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.35)}
+body:not(.locked) .hint-wrap{display:none}
+@media (max-height:800px){.hint-wrap{display:none!important}}
+body.locked .hero{height:100svh;height:100dvh;min-height:540px;max-height:none;padding-bottom:calc(var(--dock) + 6px)}
+body.locked{overflow:hidden}
+@supports (height:100svh){body.locked .hero{height:100svh}}
+body.locked .cue,body.locked .ticker-wrap,body.locked main,body.locked footer{display:none}
+body.locked .dock-btn{background:var(--cape);color:#fff}
+
+/* ================= Envelope ================= */
+.env-screen{position:fixed;inset:0;z-index:60;background:radial-gradient(90% 60% at 50% 40%,#0E2F58,#000 75%);display:grid;place-items:center;padding:24px;transition:opacity .5s ease,transform .5s ease}
+.env-screen.away{opacity:0;transform:scale(1.08);pointer-events:none}
+.env-wrap{text-align:center;perspective:1200px}
+.env-k{font:900 min(9vw,40px)/1 var(--display);text-transform:uppercase;letter-spacing:.04em;color:#BFE3F7;margin:0 0 22px}
+.env-hint{font:700 15px/1 var(--body);color:#fff;margin:24px 0 0;opacity:.85}
+@media (prefers-reduced-motion:no-preference){.env-hint{animation:pulse 1.6s ease-in-out infinite}.env:not(.open){animation:bob 2.6s ease-in-out infinite}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+.env{position:relative;display:block;width:min(78vw,300px);aspect-ratio:3/2;border:0;background:none;padding:0;margin:0 auto;transform-style:preserve-3d;cursor:pointer}
+.env>span{position:absolute;left:0;right:0;display:block}
+.env-back{top:0;bottom:0;background:#0A4C8A;border-radius:10px}
+.env-front{top:0;bottom:0;border-radius:10px;background:linear-gradient(180deg,var(--knight),#0A4C8A);clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);z-index:2;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.env-flap{top:0;height:54%;background:linear-gradient(180deg,#1A93D0,#0F6DBF);clip-path:polygon(0 0,100% 0,50% 100%);border-radius:10px 10px 0 0;transform-origin:50% 0;transition:transform .7s cubic-bezier(.4,.1,.2,1);z-index:3;backface-visibility:hidden}
+.env.open .env-flap{transform:rotateX(180deg);z-index:0}
+.env-seal{top:40%;left:50%!important;right:auto!important;width:22%;aspect-ratio:1;transform:translate(-50%,-30%);background:#fff;border-radius:50%;z-index:4;display:grid;place-items:center;box-shadow:0 6px 14px rgba(0,0,0,.4);transition:opacity .3s,transform .3s}
+.env-seal img{width:78%;height:78%;object-fit:contain}
+.env.open .env-seal{opacity:0;transform:translate(-50%,-30%) scale(.5)}
+.env>.env-card{top:6%;bottom:6%;left:6%!important;right:6%!important;background:#fff;color:#000;border-radius:8px;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px;transition:transform .7s cubic-bezier(.3,1.1,.4,1) .35s;text-align:center}
+.env-card b,.env-card span,.env-card small{display:block;width:100%}
+.env-card b{font:900 min(6.2vw,24px)/1 var(--display);text-transform:uppercase;color:var(--knight)}
+.env-card span{font:900 min(5vw,19px)/1 var(--display);text-transform:uppercase}
+.env-card small{font:600 12px/1 var(--body);color:var(--muted);margin-top:4px}
+.env.open .env-card{transform:translateY(-78%) scale(1.06)}
+
+/* ================= Dock ================= */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 12px calc(12px + var(--sb));
+  background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  border-top:1px solid rgba(255,255,255,.12);transform:translateY(110%)}
+.dock-in{max-width:470px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.dock-btn{height:60px;border:0;background:#fff;color:#000;font:900 28px/1 var(--display);text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:14px}
+.dock-btn:active{transform:scale(.98)}
+.dock-btn:disabled{opacity:.5}
+.dock-meta{text-align:right;min-width:86px}
+.dock-meta b{display:block;font:900 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.dock-meta span{font-size:13px;color:var(--steel);font-weight:600}
+.dock.mine .dock-btn{background:var(--knight);color:#fff}
+
+/* ================= Sections ================= */
+.sec{padding:44px 20px 12px;max-width:520px;margin:0 auto}
+h2{font:900 44px/.9 var(--display);text-transform:uppercase;margin:0 0 18px}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sec.tight{padding-top:12px}
+.sec>h2:not(.sr){display:flex;align-items:center;gap:14px}
+.sec>h2:not(.sr):after{content:"";flex:1;height:3px;background:#23272D;border-radius:2px}
+.lineup-sec .sec>h2:after{background:rgba(255,255,255,.28)}
+
+/* Scroll cue */
+.cue{display:flex;flex-direction:column;align-items:center;gap:0;margin:6px auto 0;background:none;border:0;color:#fff;font-weight:700;font-size:14px;letter-spacing:.01em;opacity:0;transition:opacity .3s}
+.cue.on{opacity:1}
+.cue.off{opacity:0;pointer-events:none}
+.cue svg{width:26px;height:26px;fill:none;stroke:var(--cape);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:no-preference){.cue.on svg{animation:nudge 1.4s ease-in-out infinite}}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* Ticker */
+.ticker-wrap{overflow:hidden;padding:10px 0 12px}
+.ticker{background:#fff;color:#000;transform:rotate(-2deg) scale(1.06);border-top:4px solid var(--knight);border-bottom:4px solid var(--knight);padding:9px 0;overflow:hidden}
+.track{display:flex;align-items:center;width:max-content;white-space:nowrap}
+.track span{font:900 30px/1 var(--display);text-transform:uppercase;letter-spacing:.01em;padding:0 16px}
+.track i{display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--knight);flex:none}
+@media (prefers-reduced-motion:no-preference){.track{animation:tick 26s linear infinite}}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* Game card */
+.gamecard{background:#fff;color:#000;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:92px 1fr}
+.gc-date{background:var(--knight);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 6px;text-transform:uppercase;text-align:center}
+.gc-date span{font:800 15px/1 var(--display);letter-spacing:.08em}
+.gc-date b{font:900 64px/.9 var(--display);margin:6px 0}
+.gc-main{padding:18px 16px 12px;min-width:0}
+.gc-title{display:block;font:900 34px/.9 var(--display);text-transform:uppercase;margin-bottom:14px}
+.gc-rows{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.gc-rows li{display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-weight:600;font-size:15px;line-height:1.35}
+.gc-rows svg{width:20px;height:20px;stroke:var(--knight);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
+.gc-acts{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px 12px;border-top:1px solid #EEF1F4}
+.gc-btn{height:50px;display:flex;align-items:center;justify-content:center;border-radius:12px;border:2px solid #E3E7EC;background:#fff;color:#000;font-weight:700;text-decoration:none;font-size:16px}
+.gc-btn.pri{background:var(--knight);border-color:var(--knight);color:#fff}
+
+/* Scoreboard */
+.board{background:#0B0D10;border:1px solid #23272D;border-radius:20px;overflow:hidden}
+.board-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--knight);font:800 19px/1 var(--display);text-transform:uppercase;letter-spacing:.04em}
+.board-tag{font-size:14px;background:#fff;color:var(--knight);padding:6px 9px;border-radius:6px}
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px}
+.digit{background:#000;border:1px solid #23272D;border-radius:12px;padding:14px 0 10px;text-align:center}
+.digit b{display:block;font:900 62px/1 var(--display);font-variant-numeric:tabular-nums}
+.digit span{font-size:13px;font-weight:700;color:var(--cape);text-transform:uppercase;letter-spacing:.06em}
+.score.note{grid-template-columns:1fr}
+.score.note b{font-size:40px}
+
+.tiles{display:grid;gap:10px}
+.tile{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;width:100%;text-align:left;
+  background:#0B0D10;border:1px solid #23272D;border-radius:16px;padding:14px 16px;color:#fff;min-height:76px}
+button.tile:active{background:#14181D}
+.tile .ic{width:44px;height:44px;border-radius:12px;background:var(--knight);display:grid;place-items:center}
+.tile .ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile b{display:block;font-weight:700;font-size:18px;line-height:1.25}
+.tile small{display:block;color:var(--steel);font-size:15px;line-height:1.35;margin-top:2px}
+.tile{text-decoration:none}
+.tile .go{font-weight:700;font-size:15px;color:var(--cape)}
+
+.lineup-sec{background:linear-gradient(180deg,var(--knight),var(--deep));margin-top:40px;position:relative;overflow:hidden}
+.lineup-sec .sec{position:relative;padding-bottom:40px}
+.lineup-sec:after{content:"KNIGHTS";position:absolute;right:-10px;bottom:-26px;font:900 150px/1 var(--display);color:rgba(255,255,255,.06);pointer-events:none;letter-spacing:-.02em}
+.tally{display:flex;gap:22px;margin:-4px 0 24px}
+.tally div b{display:block;font:900 52px/1 var(--display);font-variant-numeric:tabular-nums}
+.tally div span{font-size:14px;font-weight:600;color:#DCEBFA}
+.jerseys{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px 8px}
+.jerseys li{text-align:center}
+.jerseys svg{width:84px;height:84px;display:block;margin:0 auto 6px;overflow:visible}
+.jerseys .nm{font-weight:700;font-size:15px;line-height:1.2}
+.jerseys li.me .nm{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:#fff}
+.empty{border:2px dashed rgba(255,255,255,.4);border-radius:16px;padding:22px;text-align:center;color:#DCEBFA;grid-column:1/-1}
+
+.lede-d{color:var(--steel);margin:-8px 0 16px}
+.signup{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.signup li{background:#0B0D10;border:1px solid #23272D;border-radius:16px;padding:14px 16px;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center}
+.signup .em{width:44px;height:44px;border-radius:12px;background:#14181D;display:grid;place-items:center;font-size:24px}
+.signup b{display:block;font-weight:700;font-size:17px}
+.signup small{display:block;color:var(--steel);font-size:14px;line-height:1.35}
+.signup .n{font:900 30px/1 var(--display);color:var(--cape);min-width:28px;text-align:right}
+.signup li.zero .n{color:#3A4048}
+.pass{background:#fff;color:#000;border-radius:20px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.sheet .pass{border:2px solid #E3E7EC}
+.pass-top{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:center;padding:16px 18px 14px;background:linear-gradient(180deg,var(--knight),var(--deep));color:#fff}
+.pass.out .pass-top{background:#23272D}
+.pass-top svg{width:88px;height:88px;display:block;overflow:visible}
+.pass-k{display:block;font:800 18px/1 var(--display);text-transform:uppercase;letter-spacing:.04em;color:#BFE3F7}
+.pass-name{display:block;font:900 36px/.92 var(--display);text-transform:uppercase;margin:4px 0 6px;overflow-wrap:anywhere}
+.pass-sub{display:block;font-size:14px;color:#DCEBFA}
+.pass-cut{position:relative;height:0;border-top:2px dashed #D5DBE2;margin:0 14px}
+.pass-cut:before,.pass-cut:after{content:"";position:absolute;top:-11px;width:20px;height:20px;border-radius:50%;background:var(--cutbg,#000)}
+.pass-cut:before{left:-25px}.pass-cut:after{right:-25px}
+.sheet .pass-cut{--cutbg:#fff}
+.sheet .pass-cut:before,.sheet .pass-cut:after{box-shadow:inset 0 0 0 2px #E3E7EC}
+.pass-rows{margin:0;padding:6px 18px 4px}
+.pass-rows div{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #EEF1F4}
+.pass-rows div:last-child{border-bottom:0}
+.pass-rows dt{font-weight:700;font-size:14px;color:var(--muted)}
+.pass-rows dd{margin:0;font-weight:600;font-size:16px;line-height:1.35}
+.pass-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px 14px 14px}
+.pass-acts button{height:48px;border-radius:12px;border:2px solid #E3E7EC;background:#fff;font-weight:700;font-size:15px;color:#000}
+.pass-acts button.pri{background:var(--knight);border-color:var(--knight);color:#fff}
+
+.house{background:#fff;color:#000;border-radius:20px;overflow:hidden}
+.sheet .house{border:2px solid #E3E7EC}
+.house-ph{position:relative;aspect-ratio:4/3;background:#E6EAF0}
+.house-ph .map{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.marker{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-34px 0 0 -17px;z-index:1;background:var(--knight);border:3px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.marker i{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#fff}
+.marker:after{content:"";position:absolute;left:50%;bottom:-14px;width:24px;height:8px;margin-left:-6px;border-radius:50%;background:rgba(0,0,0,.3);filter:blur(2px);transform:rotate(45deg);z-index:-1}
+.osm{position:absolute;right:8px;top:6px;z-index:2;font-size:10px;color:#333;background:rgba(255,255,255,.75);padding:2px 5px;border-radius:4px}
+.house-ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.85))}
+.house-cap{position:absolute;left:18px;right:18px;bottom:14px;z-index:1;color:#fff}
+.house-cap b{display:block;font:900 40px/.9 var(--display);text-transform:uppercase}
+.house-cap span{display:block;font-weight:600;font-size:16px;margin-top:4px;color:#E6EDF4}
+.house-cap .pin{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13px;background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:999px;padding:5px 10px;margin-bottom:10px;color:#fff}
+.house-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 12px 6px}
+.mapbtn{display:flex;align-items:center;justify-content:center;gap:8px;height:54px;border-radius:14px;font-weight:700;font-size:16px;text-decoration:none}
+.mapbtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mapbtn.apple{background:#000;color:#fff}
+.mapbtn.google{background:var(--knight);color:#fff}
+.house .copy{display:block;width:100%;border:0;background:none;color:var(--knight);font-weight:700;font-size:15px;padding:10px 0 14px}
+
+.done-block{margin-top:22px;text-align:left}
+.done-block h4{font:900 28px/1 var(--display);text-transform:uppercase;margin:0 0 10px}
+.quotes.light li{background:#F2F4F7;border-color:#E3E7EC;color:#000}
+.quotes.light cite{color:var(--muted)}
+.quotes{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.quotes li{background:#0B0D10;border:1px solid #23272D;border-radius:16px;padding:16px 18px}
+.quotes li{position:relative;padding-left:46px!important}
+.quotes li:before{content:"\201C";position:absolute;left:14px;top:4px;font:900 54px/1 var(--display);color:var(--cape)}
+.quotes p{margin:0;font:700 24px/1.08 var(--display);text-transform:uppercase}
+.quotes cite{display:block;font-style:normal;color:var(--steel);font-size:14px;margin-top:8px}
+
+footer{padding:40px 20px calc(var(--dock) + 30px);text-align:center;color:var(--steel);font-size:15px;position:relative;overflow:hidden}
+.f-knight{width:120px;height:120px;display:block;margin:0 auto 4px;filter:drop-shadow(0 10px 0 rgba(26,147,208,.25))}
+.rally{margin:10px 0 0;font:900 min(24vw,110px)/.9 var(--display);text-transform:uppercase;color:#fff;letter-spacing:-.01em}
+.rally span{display:block}
+.rally .o{color:var(--cape)}
+.f-host{margin:16px 0 0;font-weight:600}
+
+/* ================= Sheets ================= */
+.scrim{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.6);opacity:0}
+.sheet{position:fixed;left:0;right:0;z-index:31;top:calc(var(--st) + 10px);height:calc(var(--vvh,100svh) - var(--st) - 10px);
+  max-width:520px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:22px 22px 0 0;display:flex;flex-direction:column;transform:translateY(105%);will-change:transform}
+.sheet.short{top:auto;bottom:0;height:auto;padding-bottom:var(--sb);z-index:33}
+#scrim2{z-index:32}
+.grab{padding:8px 0 4px;touch-action:none;cursor:grab}
+.grab i{display:block;width:40px;height:5px;border-radius:3px;background:#C9CFD6;margin:0 auto}
+.s-head{display:flex;align-items:center;gap:12px;padding:6px 16px 10px;touch-action:none}
+.s-head .back,.s-head .x{width:40px;height:40px;border:0;border-radius:50%;background:#EEF1F4;display:grid;place-items:center;flex:none}
+.s-head svg{width:20px;height:20px;stroke:#000;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.s-head .back[aria-hidden="true"]{visibility:hidden}
+.prog{flex:1;display:flex;gap:6px}
+.prog i{flex:1;height:6px;border-radius:3px;background:#E3E7EC;overflow:hidden;position:relative}
+.prog i b{position:absolute;inset:0;background:var(--knight);transform-origin:left;transform:scaleX(0)}
+.s-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:8px 20px 20px;overscroll-behavior:contain}
+.s-foot{padding:12px 16px calc(12px + var(--sb));border-top:1px solid #EEF1F4;background:var(--paper)}
+.step h3{font:900 46px/.9 var(--display);text-transform:uppercase;margin:6px 0 8px}
+.step .sub{color:var(--muted);margin:0 0 20px}
+.calls{display:grid;gap:12px}
+.call{display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:center;text-align:left;border:2px solid #000;border-radius:18px;background:#fff;padding:16px;min-height:112px;color:#000}
+.call b{display:block;font:900 40px/.9 var(--display);text-transform:uppercase}
+.call>span>span{display:block;font-size:15px;color:var(--muted);margin-top:4px}
+.call svg{width:76px;height:76px}
+.call[aria-pressed="true"]{background:var(--knight);border-color:var(--knight);color:#fff}
+.call.out[aria-pressed="true"]{background:#000;border-color:#000}
+.call[aria-pressed="true"]>span>span{color:#DCEBFA}
+.link{background:none;border:0;padding:8px 0;color:var(--knight);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.find-row{margin-top:18px;color:var(--muted);font-size:15px}
+
+.preview{display:grid;place-items:center;margin:2px 0 18px}
+.preview svg{width:150px;height:150px;overflow:visible}
+.field{display:grid;gap:6px;margin-bottom:16px}
+.field>span{font-weight:700;font-size:15px}
+.field small{font-weight:400;color:var(--muted)}
+.field input,.field textarea{width:100%;border:2px solid #C4CBD3;border-radius:12px;padding:14px;font-size:18px;background:#fff;-webkit-appearance:none;appearance:none}
+.field input:focus,.field textarea:focus{border-color:var(--knight);outline:none;box-shadow:0 0 0 4px rgba(26,147,208,.28)}
+.field textarea{min-height:100px;resize:none}
+.two{display:grid;grid-template-columns:1fr 96px;gap:10px}
+.two.solo{grid-template-columns:1fr}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:#EEF1F4;border-radius:12px;padding:4px;margin:2px 0 14px}
+.seg button{border:0;background:none;border-radius:9px;height:40px;font-weight:700;font-size:15px;color:var(--muted)}
+.seg button[aria-checked="true"]{background:#fff;color:#000;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;border:2px solid #E3E7EC;border-radius:16px;padding:14px 16px;margin-bottom:12px;font-weight:700}
+.switch{position:relative;width:56px;height:34px;flex:none}
+.switch input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.switch i{position:absolute;inset:0;border-radius:17px;background:#C4CBD3;transition:background .2s}
+.switch i:after{content:"";position:absolute;left:3px;top:3px;width:28px;height:28px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.25);transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.switch input:checked+i{background:var(--knight)}
+.switch input:checked+i:after{transform:translateX(22px)}
+.switch input:focus-visible+i{outline:3px solid var(--cape);outline-offset:2px}
+.stepper{display:flex;align-items:center;justify-content:space-between;border:2px solid #E3E7EC;border-radius:16px;padding:10px 10px 10px 16px;margin-bottom:16px}
+.stepper .lbl{font-weight:700}
+.stepper .lbl small{display:block;font-weight:400;color:var(--muted);font-size:14px}
+.stepper .ctl{display:flex;align-items:center;gap:6px}
+.stepper button{width:48px;height:48px;border-radius:50%;border:2px solid #000;background:#fff;display:grid;place-items:center}
+.stepper button svg{width:20px;height:20px;stroke:#000;stroke-width:2.6;stroke-linecap:round}
+.stepper button:disabled{opacity:.25}
+.stepper output{width:40px;text-align:center;font:900 40px/1 var(--display);display:inline-block}
+.people{border:2px solid #E3E7EC;border-radius:16px;padding:14px 14px 12px;margin-bottom:18px}
+.people-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.people-head b{font-weight:700}
+.people-head .count{min-width:36px;height:36px;border-radius:18px;background:var(--knight);color:#fff;display:grid;place-items:center;font:900 24px/1 var(--display);padding:0 8px}
+.people-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.people-list:empty{display:none}
+.people-list li{display:grid;grid-template-columns:1fr 48px;gap:8px;align-items:center}
+.people-list input{width:100%;border:2px solid #C4CBD3;border-radius:12px;padding:13px 14px;font-size:18px;background:#fff;-webkit-appearance:none;appearance:none}
+.people-list input:focus{border-color:var(--knight);outline:none;box-shadow:0 0 0 4px rgba(26,147,208,.28)}
+.people-list .rm{width:48px;height:48px;border-radius:50%;border:0;background:#EEF1F4;display:grid;place-items:center}
+.people-list .rm svg{width:18px;height:18px;stroke:#000;stroke-width:2.6;stroke-linecap:round;fill:none}
+.add{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;height:52px;border:2px dashed var(--knight);border-radius:12px;background:#F2F7FC;color:var(--knight);font-weight:700;font-size:17px}
+.add svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;fill:none}
+.bring{display:grid;gap:8px;margin-bottom:14px}
+.opt{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;width:100%;text-align:left;border:2px solid #E3E7EC;border-radius:16px;background:#fff;padding:12px 14px;color:#000;min-height:68px}
+.opt .em{width:44px;height:44px;border-radius:12px;background:#F2F4F7;display:grid;place-items:center;font-size:24px}
+.opt b{display:block;font-weight:700;font-size:17px;line-height:1.2}
+.opt small{display:block;color:var(--muted);font-size:14px}
+.opt .dot{width:26px;height:26px;border-radius:50%;border:2px solid #C4CBD3;display:grid;place-items:center}
+.opt[aria-checked="true"]{border-color:var(--knight);background:#F2F7FC}
+.opt[aria-checked="true"] .dot{border-color:var(--knight);background:var(--knight)}
+.opt[aria-checked="true"] .dot:after{content:"";width:10px;height:10px;border-radius:50%;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{border:2px solid #C4CBD3;background:#fff;border-radius:999px;padding:9px 15px;font-weight:700;font-size:15px;color:#000}
+.chip[aria-pressed="true"]{border-color:var(--knight);background:var(--knight);color:#fff}
+.legend{font-weight:700;font-size:15px;margin:4px 0 10px}
+.legend small{font-weight:400;color:var(--muted)}
+.err{color:#C62828;font-weight:700;font-size:15px;margin:0 0 10px}
+.err:empty{display:none}
+.primary{width:100%;height:58px;border:0;border-radius:14px;background:var(--knight);color:#fff;font:900 26px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.primary:disabled{opacity:.55}
+.primary:active{transform:scale(.985)}
+.hp{position:absolute;left:-9999px}
+
+.done{text-align:center;padding-top:10px}
+.done .big{width:190px;height:190px;margin:0 auto 6px;display:block;overflow:visible}
+.done h3{font:900 64px/.86 var(--display);text-transform:uppercase;margin:0 0 10px;color:var(--knight)}
+.done.out h3{color:#000}
+.done p{margin:0 auto 8px;max-width:30ch}
+.done .food{color:var(--muted);font-size:15px}
+.acts{display:grid;gap:10px;margin-top:22px;text-align:left}
+.act{display:flex;align-items:center;gap:12px;width:100%;border:2px solid #E3E7EC;border-radius:14px;background:#fff;padding:14px 16px;font-weight:700;color:#000}
+.act svg{width:22px;height:22px;stroke:var(--knight);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.picks{display:grid;gap:8px;padding:4px 16px 14px}
+.picks h4{margin:0 0 6px;font:900 30px/1 var(--display);text-transform:uppercase}
+.pick{display:flex;align-items:center;gap:12px;border:0;border-radius:14px;background:#F2F4F7;padding:16px;font-weight:700;color:#000;text-decoration:none;font-size:17px;width:100%;text-align:left}
+.pick svg{width:22px;height:22px;stroke:var(--knight);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pick.cancel{background:#fff;border:2px solid #E3E7EC;justify-content:center}
+
+.toast{position:fixed;left:50%;top:calc(var(--st) + 12px);z-index:40;transform:translate(-50%,-160%);background:#fff;color:#000;border-radius:999px;padding:11px 18px;font-weight:700;font-size:15px;box-shadow:0 8px 30px rgba(0,0,0,.35);max-width:calc(100% - 32px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head>
+<body>
+
+<div class="env-screen" id="env" hidden>
+  <div class="env-wrap">
+    <p class="env-k">You're invited</p>
+    <button class="env" id="env-btn" type="button" aria-label="Open the invitation">
+      <span class="env-back"></span>
+      <span class="env-card"><b>Geneva Knights Volleyball</b><span>End of the Season Party</span><small>Sunday, Oct 25</small></span>
+      <span class="env-front"></span>
+      <span class="env-flap"></span>
+      <span class="env-seal"><img src="/knight.png" alt=""></span>
+    </button>
+    <p class="env-hint">Tap to open</p>
+  </div>
+</div>
+
+<header class="hero" id="hero">
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <div class="court" id="court">
+    <div class="floor" id="floor"></div>
+    <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path id="ln-out" d="M6 0H94"/>
+      <path id="ln-a1" class="atk" d="M1.6 22H98.4"/>
+      <path id="ln-a2" d="M6 0L-14 100M94 0L114 100"/>
+    </svg>
+    <div class="top">
+      <h1 id="title" aria-label="Geneva Knights Volleyball"><span class="w l1" aria-hidden="true">Geneva Knights</span><span class="w l2" id="l2" aria-hidden="true">Volleyball</span></h1>
+    </div>
+    <div class="hbanner" id="hbanner" aria-label="End of the season party"><div class="hb-in"><div class="track" id="hb-track"></div></div></div>
+    <button class="music" id="music-btn" type="button" aria-label="Play music" hidden><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></button>
+    <audio id="music" preload="auto" loop src="/music.mp3"></audio>
+    <div class="shadow" id="shadow"></div>
+    <div class="ring" id="ring"></div>
+    <div class="net" id="net"><i class="pole l"></i><i class="pole r"></i><i class="ant l"></i><i class="ant r"></i></div>
+    <div class="team-stage" id="stage" aria-label="The Geneva Knights team" role="img"></div>
+    <div class="fx" id="fx" aria-hidden="true"></div>
+    <div class="flash" id="flash" aria-hidden="true"></div>
+    <div class="ball" id="ball" aria-hidden="true"><svg viewBox="2.2 2.2 19.6 19.6"><defs><radialGradient id="ballshade" cx="36%" cy="30%" r="78%"><stop offset="0" stop-color="#fff"/><stop offset=".62" stop-color="#F2F5F8"/><stop offset="1" stop-color="#BFC9D4"/></radialGradient></defs><circle cx="12" cy="12" r="9" fill="url(#ballshade)" stroke="#000" stroke-width="1.4"/><g fill="none" stroke="#000" stroke-width="1.1" stroke-linecap="round"><path d="M12 12a8 8 0 0 0 8 4"/><path d="M7.5 13.5a12 12 0 0 0 8.5 6.5"/><path d="M12 12a8 8 0 0 0 -7.464 4.928"/><path d="M12.951 7.353a12 12 0 0 0 -9.88 4.111"/><path d="M12 12a8 8 0 0 0 -.536 -8.928"/><path d="M15.549 15.147a12 12 0 0 0 1.38 -10.611"/></g></svg></div>
+    <div class="bot">
+      <div class="dbig"><span class="reveal"><span><b>25</b><i>Oct</i></span></span></div>
+      <div class="drest">
+        <span class="reveal"><span class="d1">Sunday</span></span>
+        <span class="reveal"><span class="d2">3:30 to 5:30 PM</span></span>
+        <span class="reveal"><span class="d3">The Smiths' house, Casselberry</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<button class="cue" id="cue" type="button" aria-label="Scroll down for details"><span>Scroll for details</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+
+<div class="ticker-wrap" aria-hidden="true"><div class="ticker"><div class="track" id="ticker"></div></div></div>
+
+<main>
+  <section class="sec" id="mine" aria-labelledby="h-mine" hidden>
+    <h2 id="h-mine">Your RSVP</h2>
+    <div id="mine-pass"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-game">
+    <h2 id="h-game" class="sr">Party details</h2>
+    <div class="gamecard">
+      <div class="gc-date" aria-hidden="true"><span>Sun</span><b>25</b><span>Oct</span></div>
+      <div class="gc-main">
+        <b class="gc-title">End of Season Party</b>
+        <ul class="gc-rows">
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>3:30 to 5:30 PM</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>The Smiths' house, 2008 Center Drive, Casselberry</span></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.6c2.6 0 4.6 1.6 5.4 4.4"/></svg><span>The girls, coaches and families</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0zM8 7c0-1.5 1-2 1-3.5M12 7c0-1.5 1-2 1-3.5M16 7c0-1.5 1-2 1-3.5"/></svg><span id="food">Appetizers, finger foods, fruit and desserts. Every family brings something to share.</span></li>
+        </ul>
+      </div>
+      <div class="gc-acts">
+        <button type="button" class="gc-btn pri" data-pick="cal">Add to calendar</button>
+        <a class="gc-btn" href="#h-signup">Food sign-up</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tight" aria-labelledby="h-count">
+    <div class="board">
+      <div class="board-head"><span id="h-count">Party starts in</span><span class="board-tag">Go Knights</span></div>
+      <div class="score" id="score">
+        <div class="digit"><b id="cd-d">00</b><span>days</span></div>
+        <div class="digit"><b id="cd-h">00</b><span>hours</span></div>
+        <div class="digit"><b id="cd-m">00</b><span>minutes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-where">
+    <h2 id="h-where">Getting there</h2>
+    <div class="house-slot"></div>
+  </section>
+
+  <section class="lineup-sec" aria-labelledby="h-lineup">
+    <div class="sec">
+      <h2 id="h-lineup">Who's coming</h2>
+      <div class="tally"><div><b id="t-players">0</b><span>players</span></div><div id="t-coach-wrap" hidden><b id="t-coaches">0</b><span>coaches</span></div><div><b id="t-others">0</b><span>others</span></div><div><b id="t-people">0</b><span>total</span></div></div>
+      <ul class="jerseys" id="jerseys"></ul>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-signup">
+    <h2 id="h-signup">Food sign-up</h2>
+    <p class="lede-d">Every family brings something to share. Pick yours when you RSVP.</p>
+    <ul class="signup" id="signup"></ul>
+  </section>
+
+  <section class="sec" id="quotes-sec" aria-labelledby="h-quotes" hidden>
+    <h2 id="h-quotes">Best of the season</h2>
+    <p class="lede-d">What everyone said was the best thing about this season.</p>
+    <ul class="quotes" id="quotes"></ul>
+  </section>
+</main>
+
+<footer>
+  <img class="f-knight" src="/knight.png" alt="">
+  <p class="rally" aria-label="Let's go Knights"><span>Let's</span><span class="o">Go</span><span>Knights</span></p>
+  <p class="f-host">Hosted by Audrey and the Smiths</p>
+</footer>
+
+<div class="dock" id="dock">
+  <div class="dock-in">
+    <button class="dock-btn" id="open" type="button"><span id="open-label">RSVP</span></button>
+    <div class="dock-meta"><b id="dock-n">0</b><span id="dock-sub">coming so far</span></div>
+  </div>
+</div>
+
+<!-- RSVP sheet -->
+<div class="scrim" id="scrim" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="grab" id="grab"><i></i></div>
+  <div class="s-head" id="s-head">
+    <button class="back" id="back" type="button" aria-label="Back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="prog" id="prog" aria-hidden="true"></div>
+    <button class="x" id="close" type="button" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="s-body" id="s-body">
+    <div class="step" data-step="call">
+      <h3 id="sheet-title">Can you make it?</h3>
+      <p class="sub">Sunday, Oct 25, 3:30 to 5:30 PM at the Smiths' house, 2008 Center Drive, Casselberry.</p>
+      <div class="calls">
+        <button class="call in" type="button" data-att="yes" aria-pressed="false">
+          <svg viewBox="0 0 76 76" aria-hidden="true"><rect x="2" y="2" width="72" height="72" rx="14" fill="none" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M14 54H62" stroke="currentColor" stroke-width="4"/><g transform="translate(22 22) scale(1.333)"><circle cx="12" cy="12" r="9" fill="#fff" stroke="#000" stroke-width="1.6"/><g fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"><path d="M12 12a8 8 0 0 0 8 4"/><path d="M7.5 13.5a12 12 0 0 0 8.5 6.5"/><path d="M12 12a8 8 0 0 0 -7.464 4.928"/><path d="M12.951 7.353a12 12 0 0 0 -9.88 4.111"/><path d="M12 12a8 8 0 0 0 -.536 -8.928"/><path d="M15.549 15.147a12 12 0 0 0 1.38 -10.611"/></g></g></svg>
+          <span><b>We're in</b><span>See you there</span></span>
+        </button>
+        <button class="call out" type="button" data-att="no" aria-pressed="false">
+          <svg viewBox="0 0 76 76" aria-hidden="true"><rect x="2" y="2" width="72" height="72" rx="14" fill="none" stroke="currentColor" stroke-width="3" opacity=".25"/><path d="M14 30H62" stroke="currentColor" stroke-width="4"/><g transform="translate(22 36) scale(1.333)"><circle cx="12" cy="12" r="9" fill="#fff" stroke="#000" stroke-width="1.6"/><g fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"><path d="M12 12a8 8 0 0 0 8 4"/><path d="M7.5 13.5a12 12 0 0 0 8.5 6.5"/><path d="M12 12a8 8 0 0 0 -7.464 4.928"/><path d="M12.951 7.353a12 12 0 0 0 -9.88 4.111"/><path d="M12 12a8 8 0 0 0 -.536 -8.928"/><path d="M15.549 15.147a12 12 0 0 0 1.38 -10.611"/></g></g></svg>
+          <span><b>Can't make it</b><span>Send our regrets</span></span>
+        </button>
+      </div>
+      <p class="find-row">Already sent one from another phone? <button class="link" type="button" id="to-find">Find my RSVP</button></p>
+    </div>
+
+    <div class="step" data-step="find">
+      <h3>Find my RSVP</h3>
+      <p class="sub">Enter the mobile number you used.</p>
+      <label class="field"><span>Mobile number</span><input type="tel" id="lk-phone" inputmode="tel" autocomplete="tel" placeholder="(407) 555-0123"></label>
+    </div>
+
+    <div class="step" data-step="player">
+      <div class="seg" role="radiogroup" aria-label="Who are you RSVPing for?">
+        <button type="button" role="radio" data-role="player" aria-checked="true">A player</button>
+        <button type="button" role="radio" data-role="coach" aria-checked="false">I'm a coach</button>
+      </div>
+      <h3 id="pl-title">Your player</h3>
+      <div class="preview" id="preview"></div>
+      <div class="two" id="pl-row">
+        <label class="field"><span id="pl-label">Player's name</span><input type="text" id="player" autocomplete="off" autocapitalize="words" enterkeyhint="next" maxlength="60" placeholder="First and last"></label>
+        <label class="field" id="jersey-wrap"><span>Jersey</span><input type="text" id="jersey" inputmode="numeric" pattern="[0-9]*" enterkeyhint="next" maxlength="2" placeholder="#"></label>
+      </div>
+    </div>
+
+    <div class="step" data-step="crew">
+      <h3>Who's coming?</h3>
+      <p class="sub" id="crew-sub">Add everyone coming with your player.</p>
+      <label class="toggle" id="pc-wrap"><span id="pc-label">Player is coming</span><span class="switch"><input type="checkbox" id="playerComing" checked aria-labelledby="pc-label"><i></i></span></label>
+      <div class="people">
+        <div class="people-head"><b>Other people coming</b><span class="count" id="ppl-count">0</span></div>
+        <ol class="people-list" id="people"></ol>
+        <button type="button" class="add" id="add-person"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add a person</button>
+      </div>
+      <p class="legend">Food allergies or diet needs <small>Tap any that apply</small></p>
+      <div class="chips" id="chips"></div>
+      <label class="field" id="do-wrap" hidden><span>Tell us more</span><input type="text" id="dietOther" maxlength="140"></label>
+    </div>
+
+    <div class="step" data-step="bring">
+      <h3>What will you bring?</h3>
+      <p class="sub">Every family brings something to share. Pick one, and you can change it later.</p>
+      <div class="bring" id="bring" role="radiogroup" aria-label="What you'll bring"></div>
+      <label class="field" id="bo-wrap" hidden><span>What are you bringing?</span><input type="text" id="bringOther" maxlength="80" autocapitalize="sentences" enterkeyhint="done" placeholder="e.g. Pizza rolls"></label>
+    </div>
+
+    <div class="step" data-step="last">
+      <h3>Last thing</h3>
+      <label class="field"><span id="moment-lbl"></span><textarea id="moment" maxlength="220" enterkeyhint="done"></textarea></label>
+      <label class="field"><span>Your mobile number <small>Only the hosts see it. Use it to change your RSVP later.</small></span><input type="tel" id="phone" inputmode="tel" autocomplete="tel" placeholder="(407) 555-0123"></label>
+      <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </div>
+
+    <div class="step done" data-step="done">
+      <div id="done-art"></div>
+      <h3 id="done-title">You're in</h3>
+      <p id="done-line"></p>
+      <p class="food" id="done-food"></p>
+      <div class="done-block" id="done-pass"></div>
+      <div class="done-block" id="done-where"><h4>Getting there</h4><div class="house-slot"></div></div>
+      <div class="done-block" id="done-best" hidden><h4>Best of the season</h4><ul class="quotes light" id="done-quotes"></ul><button class="link" type="button" id="see-best">See everyone's answers</button></div>
+      <div class="acts">
+        <button class="act share" type="button"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share with another family</button>
+        <button class="act" type="button" id="see-page"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>See the party page</button>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot" id="s-foot">
+    <p class="err" id="err" role="alert"></p>
+    <button class="primary" id="next" type="button">Next</button>
+  </div>
+</div>
+
+<div class="scrim" id="scrim2" hidden></div>
+<div class="sheet short" id="pick" role="dialog" aria-modal="true" aria-labelledby="pick-title" hidden>
+  <div class="grab"><i></i></div>
+  <div class="picks" id="picks"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ---------- Event ---------- */
+const START = new Date('2026-10-25T15:30:00-04:00'), END = new Date('2026-10-25T17:30:00-04:00');
+const ADDRESS = '2008 Center Drive, Casselberry, FL';
+const DIET = ['Vegetarian','Vegan','Gluten-free','Dairy-free','Nut allergy','Other'];
+const KEY = 'knightsvb26.rsvp';
+
+/* ---------- Helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const digits = (s) => String(s || '').replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');
+const fmtPhone = (s) => { const d = digits(s).slice(0,10); return d.length < 4 ? d : d.length < 7 ? `(${d.slice(0,3)}) ${d.slice(3)}` : `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`; };
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+const store = { get(){ try { return JSON.parse(localStorage.getItem(KEY)); } catch { return null; } }, set(v){ try { localStorage.setItem(KEY, JSON.stringify(v)); } catch {} } };
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+async function api(path, opts = {}){
+  const r = await fetch(path, { headers: { 'content-type':'application/json' }, ...opts });
+  let j = {}; try { j = await r.json(); } catch {}
+  if (!r.ok) throw new Error(j.error || 'Something went wrong. Try again.');
+  return j;
+}
+
+function mulberry(seed){ return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+/* ---------- Motion: closed-form springs, pure functions of time ---------- */
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+function spring(t, k = 170, d = 26){
+  if (t <= 0) return 0;
+  const w0 = Math.sqrt(k), z = d / (2 * w0);
+  if (z < 1){ const wd = w0 * Math.sqrt(1 - z * z); return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + (z * w0 / wd) * Math.sin(wd * t)); }
+  return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+}
+function tween(from, to, apply, { k = 260, d = 30, dur = 0.8 } = {}){
+  return new Promise((res) => {
+    if (REDUCED){ apply(to); return res(); }
+    const t0 = performance.now();
+    (function f(){ const t = (performance.now() - t0) / 1000; apply(from + (to - from) * spring(t, k, d)); if (t < dur) requestAnimationFrame(f); else { apply(to); res(); } })();
+  });
+}
+
+/* ---------- Opening sequence: seek(t) paints any moment ---------- */
+const court = $('#court'), floor = $('#floor'), net = $('#net'), ball = $('#ball'), shadow = $('#shadow'), ring = $('#ring'), dock = $('#dock'), flash = $('#flash'), stage = $('#stage'), fxLayer = $('#fx');
+$$('#title .l1').forEach((w) => { w.innerHTML = [...w.textContent].map((c) => c === ' ' ? ' ' : `<span class="ch">${c}</span>`).join(''); });
+$('#confetti').innerHTML = Array.from({ length: 26 }, (_, i) => { const r = mulberry(i + 7); return `<i style="left:${(r() * 100).toFixed(1)}%;--d:${(5 + r() * 5).toFixed(1)}s;--delay:${(-r() * 9).toFixed(1)}s;background:${['#fff','#1A93D0','#BFE3F7','#0059A3','#fff'][i % 5]};width:${5 + Math.round(r() * 4)}px;height:${9 + Math.round(r() * 6)}px"></i>`; }).join('');
+$('#hb-track').innerHTML = (() => { const one = Array.from({ length: 4 }, () => '<span>End of the Season Party</span><i></i>').join(''); return one + one; })();
+const chars = $$('#title .ch'), reveals = $$('.bot .reveal > span');
+const lerp = (a, b, u) => a + (b - a) * u;
+
+/* The team. Positions are court fractions (x, y of the sticker's center), r is degrees, s is scale.
+   Each key is [time, x, y, r, s, stiffness, damping]; values after the first key are summed as springs, so a
+   stiff key snaps and a loose key bounces. Everyone's last key is their spot for the picture in front of the net. */
+const BY = 0.515, FY = 0.67;
+const POSE = { p9:[0.10,BY], p6:[0.25,BY], p11:[0.40,BY], p8:[0.55,BY], p10:[0.70,BY], p1:[0.17,FY], p2:[0.32,FY], p7:[0.47,FY], p3:[0.62,FY], p13:[0.77,FY], coach:[0.905,0.63] };
+const P = (id) => POSE[id];
+const FLY = 0.42; // how long a flight takes
+// Each hero: where she flies in from (x, y, lean, size) and when she takes off. Landing = start + FLY.
+const HERO = [
+  ['p9',   0.60, [-0.25,-0.35,-35,1.4]],   // swoops in from the top left
+  ['p6',   0.78, [0.25,-0.4,0,1.5]],       // straight down
+  ['p11',  0.96, [-0.25,1.25,30,1.3]],     // rises from the bottom left
+  ['p8',   1.14, [1.25,-0.35,35,1.4]],     // swoops in from the top right
+  ['p10',  1.32, [1.35,BY-0.12,25,1.4]],   // flies in low from the right
+  ['p1',   0.25, [-0.35,FY-0.25,-30,1.45]], // first in, from the left
+  ['p2',   0.42, [0.32,-0.45,0,1.5]],      // straight down, fast
+  ['p7',   1.50, [1.25,1.25,30,1.3]],      // up from the bottom right
+  ['p3',   1.68, [1.35,-0.25,40,1.4]],     // from the top right
+  ['p13',  1.86, [0.77,1.35,0,1.3]],       // rockets up from the bottom
+  ['coach',2.10, [1.35,0.5,20,1.3]],       // coach lands on the sideline
+];
+const ACTORS = HERO.map(([id, start, from]) => ({ id, start, land: start + FLY, keys: [[start, from[0], from[1], from[2], from[3]], [start + FLY, P(id)[0], P(id)[1], 0, 1, 260, 24]] }));
+const RALLY = ['p1','p10','p13','p9','p7','p6','p3','p11','p2','p8'];   // who the ball goes to, in order, forever
+const T_RALLY = 2.7, HOP = 0.55, ARC = 0.17;
+const BURST_SVG = '<svg viewBox="-40 -40 80 80"><g fill="#fff" stroke="#0059A3" stroke-width="2" stroke-linejoin="round"><path d="M0-36L7-9 36 0 7 9 0 36-7 9-36 0-9-7Z"/></g><g fill="#1A93D0"><circle cx="30" cy="-26" r="4"/><circle cx="-31" cy="-20" r="3"/><circle cx="28" cy="26" r="3"/><circle cx="-26" cy="27" r="4"/></g></svg>';
+stage.innerHTML = ACTORS.map((a) => `<div class="actor" data-id="${a.id}"><img src="/team/${a.id}.webp" alt="" draggable="false"></div>`).join('');
+fxLayer.innerHTML = `<div class="burst">${BURST_SVG}</div>` + ACTORS.map(() => '<div class="lring"></div>').join('');
+const actorEls = ACTORS.map((a) => $(`.actor[data-id="${a.id}"]`)), burstEl = $('.burst'), ringEls = $$('.lring');
+const actorIdx = Object.fromEntries(ACTORS.map((a, i) => [a.id, i]));
+
+function trackAt(keys, t, idx){
+  let v = keys[0][idx];
+  for (let i = 1; i < keys.length; i++){ const k = keys[i]; v += (k[idx] - keys[i - 1][idx]) * spring(t - k[0], k[5] || 160, k[6] || 18); }
+  return v;
+}
+const bumpCurve = (dt) => dt > 0 && dt < 0.32 ? Math.sin(Math.PI * dt / 0.32) : 0;
+function draw(el, L, u){ if (u >= 1){ el.style.strokeDasharray = 'none'; return; } el.style.strokeDasharray = `${L} ${L}`; el.style.strokeDashoffset = L * (1 - u); }
+const T_FLASH = 3.95, T_TITLE = 4.05, DUR = 5.0;
+function seek(t, idle = 0){
+  const W = court.clientWidth, H = court.clientHeight;
+  // the gym: floor rolls out from the net line, lines draw, net drops onto its posts
+  floor.style.transform = `scaleY(${spring(t - 0.02, 140, 22)})`;
+  draw($('#ln-out'), W, clamp((t - 0.1) / 0.35));
+  draw($('#ln-a1'), W, clamp((t - 0.3) / 0.3));
+  draw($('#ln-a2'), 2.2 * H, clamp((t - 0.2) / 0.45));
+  net.style.transform = `translateY(${(1 - spring(t - 0.15, 170, 17)) * -0.9 * H}px)`;
+  // the rally: ball time keeps running while the page sits idle, so the ball never stops
+  const rt = t - T_RALLY + idle, inRally = rt >= 0;
+  const hop = Math.floor(rt / HOP), u = rt / HOP - hop;
+  const hitter = RALLY[((hop % RALLY.length) + RALLY.length) % RALLY.length], receiver = RALLY[(((hop + 1) % RALLY.length) + RALLY.length) % RALLY.length];
+  const bumpDt = inRally ? u * HOP : -1;
+  // the team
+  ACTORS.forEach((a, i) => {
+    const el = actorEls[i], k = a.keys, ring = ringEls[i];
+    const vis = t >= a.start;
+    el.style.opacity = vis ? 1 : 0;
+    if (!vis){ ring.style.opacity = 0; return; }
+    let x = trackAt(k, t, 1), y = trackAt(k, t, 2), r = trackAt(k, t, 3), sc = trackAt(k, t, 4);
+    // the superhero landing: squash on impact, a shockwave ring at her feet
+    const ld = t - a.land, sq = ld > 0 && ld < 0.3 ? Math.sin(Math.PI * ld / 0.3) : 0;
+    const sx = 1 + sq * 0.22, sy = 1 - sq * 0.26;
+    const ru = ld / 0.5;
+    ring.style.opacity = ru > 0 && ru < 1 ? (1 - ru) * 0.9 : 0;
+    ring.style.transform = `translate(${P(a.id)[0] * W}px, ${(P(a.id)[1] + 0.09) * H}px) scale(${0.3 + ru * 1.6})`;
+    const idleT = idle + t;
+    if (a.id === 'coach'){
+      // coach on the sideline, arm up, cheering: a hop and a lean, bigger during the rally
+      const cheer = inRally ? 1 : 0.35;
+      y -= Math.abs(Math.sin(idleT * 5.2)) * 0.022 * cheer; r += Math.sin(idleT * 5.2) * 7 * cheer;
+    } else if (t >= DUR - 0.01 || inRally){
+      y += Math.sin(idleT * 2.2 + i * 0.9) * 0.003;
+    }
+    if (inRally && a.id === hitter){
+      const b = bumpCurve(bumpDt);
+      const dir = Math.sign(P(receiver)[0] - P(hitter)[0]) || 1;
+      y -= b * 0.04; r += b * dir * 12; sc += b * 0.06;
+    }
+    el.style.transform = `translate(${x * W}px, ${y * H}px) translate(-50%,-50%) rotate(${r}deg) scale(${sc * sx}, ${sc * sy})`;
+    el.style.transformOrigin = '50% 100%';
+  });
+  // the ball flies player to player; the hitter pops up to meet it
+  if (!inRally){ ball.style.opacity = 0; shadow.style.opacity = 0; burstEl.style.opacity = 0; }
+  else {
+    const from = P(hitter), to = P(receiver);
+    const gx = lerp(from[0], to[0], u), gy = lerp(from[1], to[1], u) - 0.05;
+    const h = 4 * ARC * u * (1 - u);
+    const pop = rt < 0.4 ? spring(rt, 300, 16) : 1;
+    ball.style.opacity = 1; shadow.style.opacity = 0.55 - h * 1.5;
+    ball.style.transform = `translate(${gx * W}px, ${(gy - h) * H}px) scale(${(0.9 + h * 0.6) * pop}) rotate(${rt * 420}deg)`;
+    shadow.style.transform = `translate(${gx * W}px, ${(lerp(from[1], to[1], u) + 0.06) * H}px) scale(${1 - h * 1.2})`;
+    const bu = bumpDt / 0.4;
+    burstEl.style.opacity = bu < 1 ? (1 - bu) * 0.9 : 0;
+    burstEl.style.transform = `translate(${from[0] * W}px, ${(from[1] - 0.09) * H}px) scale(${0.25 + bu * 0.6}) rotate(${bu * 50}deg)`;
+  }
+  ring.style.opacity = 0;
+  // say cheese: the photo flash, then the title slams in over the picture
+  const fl = t - T_FLASH;
+  flash.style.opacity = fl < 0 ? 0 : fl < 0.08 ? 1 : Math.max(0, 1 - (fl - 0.08) / 0.5);
+  $('#l2').style.transform = `translateX(${(1 - spring(t - T_TITLE - 0.35, 200, 22)) * 120}%)`;
+  $('.hb-in').style.transform = `translateX(${(1 - spring(t - T_TITLE - 0.45, 170, 22)) * 110}%)`;
+  $('#confetti').classList.toggle('on', t >= T_TITLE + 0.2);
+  chars.forEach((c, i) => {
+    const s = spring(t - T_TITLE - i * 0.03, 340, 24);
+    c.style.opacity = clamp((t - T_TITLE - i * 0.03) * 14);
+    c.style.transform = `translateY(${(1 - s) * -0.5}em) scale(${1 + (1 - s) * 0.6})`;
+  });
+  reveals.forEach((r, i) => { r.style.transform = `translateY(${(1 - spring(t - T_TITLE - 0.25 - i * 0.09, 230, 28)) * 105}%)`; });
+  dock.style.transform = `translateY(${(1 - spring(t - T_TITLE - 0.55, 240, 28)) * 110}%)`;
+  if (t >= T_TITLE + 0.8 && !document.body.classList.contains('locked')) $('#cue').classList.add('on');
+}
+const qT = new URLSearchParams(location.search).get('t');
+let playing = false, idleStart = 0, idleRAF = 0;
+function idleLoop(){
+  cancelAnimationFrame(idleRAF);
+  if (REDUCED || qT !== null) return;
+  idleStart = performance.now();
+  (function f(){ if (document.hidden) { idleRAF = requestAnimationFrame(f); return; } seek(DUR, (performance.now() - idleStart) / 1000); idleRAF = requestAnimationFrame(f); })();
+}
+function play(){
+  if (qT !== null){ seek(parseFloat(qT)); return; }
+  if (REDUCED){ seek(DUR); return; }
+  cancelAnimationFrame(idleRAF); playing = true;
+  const t0 = performance.now();
+  (function f(){ const t = (performance.now() - t0) / 1000; seek(Math.min(t, DUR)); if (t < DUR) requestAnimationFrame(f); else { playing = false; idleLoop(); } })();
+}
+window.seek = seek;
+/* Music: drop a song at /music.mp3 and the note button appears. Phones only play sound after a tap. */
+(() => {
+  const au = $('#music'), btn = $('#music-btn');
+  const sync = () => { btn.classList.toggle('on', !au.paused); btn.setAttribute('aria-label', au.paused ? 'Play music' : 'Pause music'); };
+  au.addEventListener('play', sync); au.addEventListener('pause', sync);
+  let wanted = true;
+  const tryPlay = () => { if (!wanted || !au.paused || !envOpened) return; au.play().then(sync).catch(() => {}); };
+  au.addEventListener('canplay', () => { btn.hidden = false; }, { once: true });
+  ['pointerdown', 'touchstart', 'keydown'].forEach((ev) => document.addEventListener(ev, tryPlay, { capture: true, passive: true }));
+  btn.onclick = () => { if (au.paused){ wanted = true; au.play().catch(() => {}); } else { wanted = false; au.pause(); } };
+  document.addEventListener('visibilitychange', () => { if (document.hidden) au.pause(); else tryPlay(); });
+})();
+function setLocked(v){ document.body.classList.toggle('locked', v); }
+setLocked(!store.get());
+stage.style.pointerEvents = 'auto'; stage.onclick = () => { if (!playing && document.body.classList.contains('locked')) play(); };
+let assetsReady = false, envOpened = false;
+Promise.all([
+  document.fonts && document.fonts.ready ? Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 900))]) : Promise.resolve(),
+  Promise.race([Promise.all($$('.actor img').map((im) => im.complete ? Promise.resolve() : new Promise((r) => { im.onload = r; im.onerror = r; }))), new Promise((r) => setTimeout(r, 2500))]),
+]).then(() => { fitTitle(); assetsReady = true; if (envOpened || $('#env').hidden) play(); });
+/* The envelope: the first thing a new family sees. Tapping it starts the song (a tap is what phones need) and the show. */
+(() => {
+  const env = $('#env'), btn = $('#env-btn');
+  if (!document.body.classList.contains('locked') || qT !== null){ env.hidden = true; return; }
+  env.hidden = false; seek(0);
+  btn.onclick = () => {
+    if (btn.classList.contains('open')) return;
+    btn.classList.add('open');
+    const au = $('#music'); if (au) au.play().catch(() => {});
+    setTimeout(() => { env.classList.add('away'); envOpened = true; if (assetsReady) play(); }, 1050);
+    setTimeout(() => { env.hidden = true; }, 1700);
+  };
+})();
+function fitTitle(){
+  const h1 = $('#title'), top = h1.parentElement;
+  const avail = (top.clientWidth - parseFloat(getComputedStyle(top).paddingLeft) * 2) * 0.97;
+  $$('#title .w').forEach((w) => { w.style.fontSize = '100px'; const wd = w.offsetWidth; w.style.fontSize = Math.min(100 * avail / wd, court.clientHeight * 0.075) + 'px'; });
+  const cb = court.getBoundingClientRect(), hb = h1.getBoundingClientRect();
+  $('#hbanner').style.top = (hb.bottom - cb.top + 4) + 'px';
+}
+fitTitle();
+addEventListener('resize', () => { fitTitle(); if (qT === null && !playing) seek(DUR); });
+
+/* ---------- Locked until RSVP ---------- */
+
+/* ---------- Scroll cue ---------- */
+$('#cue').onclick = () => $('.gamecard').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'start' });
+addEventListener('scroll', () => { if (scrollY > 80) $('#cue').classList.add('off'); }, { passive: true });
+
+/* ---------- Ticker ---------- */
+(() => {
+  const items = ["Let's go Knights", 'Sun, Oct 25', '3:30 PM', 'End of season party', 'Bring something to share'];
+  const one = items.map((t) => `<span>${esc(t)}</span><i></i>`).join('');
+  $('#ticker').innerHTML = one + one;
+})();
+
+/* ---------- Countdown ---------- */
+let counted = false;
+function tick(){
+  const now = new Date(), sc = $('#score');
+  if (now >= START){
+    sc.className = 'score note';
+    sc.innerHTML = now >= END ? '<div class="digit"><b>That\'s a wrap</b><span>Thanks for a great season</span></div>' : '<div class="digit"><b>Happening now</b><span>Come on over</span></div>';
+    return null;
+  }
+  const ms = START - now, v = [Math.floor(ms / 864e5), Math.floor(ms / 36e5) % 24, Math.floor(ms / 6e4) % 60];
+  if (counted || !tick.ran) ['#cd-d','#cd-h','#cd-m'].forEach((id, i) => $(id).textContent = String(v[i]).padStart(2,'0'));
+  return v;
+}
+const v0 = tick(); tick.ran = true;
+setInterval(tick, 15000);
+new IntersectionObserver((es, ob) => es.forEach((e) => {
+  if (!e.isIntersecting || counted || !v0) return;
+  ob.disconnect();
+  tween(0, 1, (u) => ['#cd-d','#cd-h','#cd-m'].forEach((id, i) => $(id).textContent = String(Math.round(v0[i] * u)).padStart(2,'0')), { k: 90, d: 19, dur: 1.4 }).then(() => { counted = true; tick(); });
+}), { threshold: 0.6 }).observe($('#score'));
+
+/* ---------- Sheets ---------- */
+function setVVH(){ const vv = window.visualViewport; document.documentElement.style.setProperty('--vvh', (vv ? vv.height : innerHeight) + 'px'); }
+setVVH(); if (window.visualViewport) visualViewport.addEventListener('resize', setVVH);
+let lastFocus = null;
+async function openSheet(sheet, scrim){
+  lastFocus = document.activeElement;
+  scrim.hidden = false; sheet.hidden = false; document.documentElement.style.overflow = 'hidden';
+  await tween(0, 1, (u) => { sheet.style.transform = `translateY(${(1 - u) * 105}%)`; scrim.style.opacity = clamp(u); }, { k: 300, d: 32, dur: 0.6 });
+}
+async function closeSheet(sheet, scrim){
+  const cur = sheet.style.transform.match(/translateY\(([\d.]+)/); const from = cur ? parseFloat(cur[1]) / 105 : 0;
+  await tween(from, 1, (u) => { sheet.style.transform = `translateY(${u * 105}%)`; scrim.style.opacity = clamp(1 - u); }, { k: 400, d: 40, dur: 0.35 });
+  sheet.hidden = true; scrim.hidden = true; if ($$('.sheet').every((x) => x.hidden)) document.documentElement.style.overflow = '';
+  if (lastFocus) lastFocus.focus({ preventScroll: true });
+}
+function dragToClose(sheet, handles, onClose){
+  let y0 = null, dy = 0, H = 0;
+  handles.forEach((h) => {
+    h.addEventListener('pointerdown', (e) => { if (e.target.closest('button')) return; y0 = e.clientY; dy = 0; H = sheet.offsetHeight; h.setPointerCapture(e.pointerId); });
+    h.addEventListener('pointermove', (e) => { if (y0 === null) return; dy = Math.max(0, e.clientY - y0); sheet.style.transform = `translateY(${dy / H * 105}%)`; });
+    h.addEventListener('pointerup', () => { if (y0 === null) return; y0 = null; if (dy > 110) onClose(); else tween(dy / H, 0, (u) => sheet.style.transform = `translateY(${u * 105}%)`, { k: 320, d: 30, dur: 0.5 }); });
+  });
+}
+
+const pick = $('#pick'), scrim2 = $('#scrim2');
+const gq = new URLSearchParams({ action:'TEMPLATE', text:'Knights Volleyball End of Season Party', dates:'20261025T193000Z/20261025T213000Z', location:ADDRESS, details:'Players and parents welcome. Hosted by Audrey and the Smiths.' });
+const ico = { cal:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>', map:'<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>', copy:'<svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>' };
+const PICKS = {
+  cal: { title:'Add to calendar', items:[[ico.cal,'Apple Calendar','/party.ics'],[ico.cal,'Google Calendar','https://calendar.google.com/calendar/render?' + gq]] },
+  map: { title:'Directions', items:[[ico.map,'Apple Maps','https://maps.apple.com/?daddr=' + encodeURIComponent(ADDRESS)],[ico.map,'Google Maps','https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(ADDRESS)],[ico.copy,'Copy address','#copy']] },
+};
+async function showPick(kind){
+  const p = PICKS[kind];
+  $('#picks').innerHTML = `<h4 id="pick-title">${p.title}</h4>` + p.items.map(([i, l, h]) => h === '#copy' ? `<button class="pick" type="button" data-copy>${i}${l}</button>` : `<a class="pick" href="${h}" ${h.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${i}${l}</a>`).join('') + '<button class="pick cancel" type="button" data-cancel>Cancel</button>';
+  await openSheet(pick, scrim2); $('#picks .pick').focus();
+}
+const closePick = () => closeSheet(pick, scrim2);
+$('#picks').onclick = async (e) => {
+  if (e.target.closest('[data-cancel]')) return closePick();
+  if (e.target.closest('[data-copy]')){ toast(await copyText(ADDRESS) ? 'Address copied' : "Couldn't copy the address"); return closePick(); }
+  if (e.target.closest('a')) setTimeout(closePick, 300);
+};
+scrim2.onclick = closePick;
+dragToClose(pick, [$('.grab', pick)], closePick);
+document.addEventListener('click', (e) => { const b = e.target.closest('[data-pick]'); if (b) showPick(b.dataset.pick); });
+
+let toastT;
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; clearTimeout(toastT);
+  tween(0, 1, (u) => t.style.transform = `translate(-50%, ${(1 - u) * -160}%)`, { k: 300, d: 26, dur: 0.6 });
+  toastT = setTimeout(() => tween(1, 0, (u) => t.style.transform = `translate(-50%, ${(1 - u) * -160}%)`, { k: 300, d: 34, dur: 0.4 }), 2400);
+}
+async function copyText(t){ try { await navigator.clipboard.writeText(t); return true; } catch { return false; } }
+async function shareIt(){
+  const url = location.origin + '/';
+  if (navigator.share){ try { await navigator.share({ title:'Knights Volleyball End of Season Party', text:'RSVP and sign up to bring something for the Knights end of season party, Sun Oct 25 at 3:30', url }); } catch {} }
+  else toast(await copyText(url) ? 'Link copied' : "Couldn't copy the link");
+}
+$$('.act.share').forEach((b) => b.onclick = shareIt);
+
+/* ---------- Jerseys ---------- */
+function jerseySVG(num, { fill = '#fff', text = '#0059A3', stroke = '#000', name = '' } = {}){
+  num = String(num || ''); const n = esc(num);
+  const inner = `<path d="M31 8h12c2 6 4 9 7 9s5-3 7-9h12l20 15-9 17-8-4v57H28V36l-8 4-9-17z" fill="${fill}" stroke="${stroke}" stroke-width="3" stroke-linejoin="round"/><path d="M43 8c2 6 4 9 7 9s5-3 7-9" fill="none" stroke="${text}" stroke-width="3"/>${n ? `<text x="50" y="${num.length > 1 ? 74 : 75}" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="900" font-size="${num.length > 1 ? 40 : 44}" fill="${text}">${n}</text>` : `<g transform="translate(32.7 43.7) scale(1.444)"><circle cx="12" cy="12" r="9" fill="${fill}" stroke="${text}" stroke-width="1.8"/><g fill="none" stroke="${text}" stroke-width="1.5" stroke-linecap="round"><path d="M12 12a8 8 0 0 0 8 4"/><path d="M7.5 13.5a12 12 0 0 0 8.5 6.5"/><path d="M12 12a8 8 0 0 0 -7.464 4.928"/><path d="M12.951 7.353a12 12 0 0 0 -9.88 4.111"/><path d="M12 12a8 8 0 0 0 -.536 -8.928"/><path d="M15.549 15.147a12 12 0 0 0 1.38 -10.611"/></g></g>`}${name ? `<text x="50" y="40" text-anchor="middle" font-family="Barlow,Arial,sans-serif" font-weight="700" font-size="8" letter-spacing=".5" fill="${text}">${esc(name.toUpperCase().slice(0,14))}</text>` : ''}`;
+  return { inner, svg: `<svg viewBox="0 0 100 100" aria-hidden="true">${inner}</svg>` };
+}
+
+
+function coachSVG({ fill = '#000', text = '#fff', stroke = '#000', name = '' } = {}){
+  return `<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M31 8h12c2 6 4 9 7 9s5-3 7-9h12l20 15-9 17-8-4v57H28V36l-8 4-9-17z" fill="${fill}" stroke="${stroke}" stroke-width="3" stroke-linejoin="round"/><path d="M43 8c2 6 4 9 7 9s5-3 7-9" fill="none" stroke="${text}" stroke-width="3"/><text x="50" y="72" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="900" font-size="15" letter-spacing=".5" fill="${text}">COACH</text>${name ? `<text x="50" y="40" text-anchor="middle" font-family="Barlow,Arial,sans-serif" font-weight="700" font-size="8" letter-spacing=".5" fill="${text}">${esc(name.toUpperCase().slice(0,14))}</text>` : ''}</svg>`;
+}
+
+/* ---------- Board ---------- */
+let seenBoard = false, BOARD = null;
+const shortName = (full) => { const p = String(full).trim().split(/\s+/); return p.length > 1 ? `${p[0]} ${p[p.length - 1][0]}.` : p[0]; };
+function renderBoard(pop){
+  const j = BOARD; if (!j) return;
+  const me = store.get();
+  const myShort = me && me.attending && me.playerComing && me.role !== 'coach' ? shortName(me.player) : null;
+  $('#t-coaches').textContent = j.totals.coaches || 0; $('#t-coach-wrap').hidden = !j.totals.coaches;
+  $('#t-players').textContent = j.totals.players; $('#t-others').textContent = j.totals.others; $('#t-people').textContent = j.totals.people;
+  $('#jerseys').innerHTML = j.players.length
+    ? j.players.map((p) => `<li class="${p.name === myShort ? 'me' : ''}">${jerseySVG(p.jersey, p.name === myShort ? { fill:'#000', text:'#fff', stroke:'#fff' } : {}).svg}<div class="nm">${esc(p.name)}</div></li>`).join('')
+    : '<li class="empty">No one yet. Be the first jersey on the board.</li>';
+  if ((j.coaches || []).length) $('#jerseys').insertAdjacentHTML('beforeend', j.coaches.map((c) => `<li>${coachSVG({ fill:'#000', text:'#fff', stroke:'#fff' })}<div class="nm">Coach ${esc(c.name.split(' ')[0])}</div></li>`).join(''));
+  renderSignup(j.signup || []);
+  $('#quotes-sec').hidden = !j.moments.length;
+  $('#quotes').innerHTML = j.moments.map((m) => `<li><p>${esc(m.text)}</p><cite>${esc(m.name)}${m.jersey ? ', #' + esc(m.jersey) : ''}</cite></li>`).join('');
+  updateDock();
+  if (pop) popJerseys();
+}
+function popJerseys(){
+  if (REDUCED) return;
+  const items = $$('#jerseys li svg');
+  items.forEach((s) => s.style.transform = 'scale(0)');
+  const t0 = performance.now();
+  (function f(){ const t = (performance.now() - t0) / 1000; items.forEach((s, i) => { const v = spring(t - i * 0.06, 260, 18); s.style.transform = `scale(${v}) rotate(${(1 - v) * -12}deg)`; }); if (t < 1 + items.length * 0.06) requestAnimationFrame(f); })();
+}
+async function loadBoard(pop){
+  try { BOARD = await api('/api/board'); renderBoard(pop); }
+  catch { $('#jerseys').innerHTML = '<li class="empty">Couldn\'t load the lineup. Pull down to refresh.</li>'; }
+}
+loadBoard(false);
+new IntersectionObserver((es, ob) => es.forEach((e) => { if (e.isIntersecting && !seenBoard){ seenBoard = true; ob.disconnect(); popJerseys(); } }), { threshold: 0.25 }).observe($('#jerseys'));
+document.addEventListener('visibilitychange', () => { if (!document.hidden) loadBoard(false); });
+
+/* ---------- Settings ---------- */
+let OPEN = true, FOOD = '';
+api('/api/settings').then((s) => {
+  OPEN = s.open !== false; FOOD = s.foodNote || '';
+  if (FOOD) $('#food').textContent = FOOD;
+  updateDock();
+}).catch(() => {});
+
+/* ---------- Dock ---------- */
+function updateDock(){
+  const me = store.get();
+  $('#dock-n').textContent = BOARD ? BOARD.totals.people : 0;
+  dock.classList.toggle('mine', !!me);
+  if (me){
+    const first = String(me.player).split(' ')[0];
+    $('#open-label').textContent = me.attending ? "You're in" : 'Change RSVP';
+    $('#open').disabled = false;
+    $('#open').setAttribute('aria-label', me.attending ? `You're in with ${first}. View or change RSVP` : 'Change RSVP');
+  } else {
+    $('#open-label').textContent = OPEN ? 'RSVP' : 'RSVPs closed';
+    $('#open').disabled = !OPEN;
+  }
+}
+
+
+
+/* ---------- Your RSVP pass, house card, best of season ---------- */
+const MAP_IMG = '/map.webp';
+const MAPS = { apple: 'https://maps.apple.com/?daddr=' + encodeURIComponent(ADDRESS), google: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(ADDRESS) };
+const PIN = '<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+const NAV = '<svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></svg>';
+function houseHTML(){
+  return `<div class="house"><div class="house-ph"><img class="map" src="${MAP_IMG}" alt="Map showing 2008 Center Drive, Casselberry" width="780" height="585" loading="lazy"><span class="marker" aria-hidden="true"><i></i></span><small class="osm">© OpenStreetMap contributors</small><div class="house-cap"><span class="pin">${PIN.replace('<svg ', '<svg width="14" height="14" fill="none" stroke="#fff" stroke-width="2.4" ')}The Smiths' house</span><b>2008 Center Drive</b><span>Casselberry, FL</span></div></div>
+  <div class="house-acts"><a class="mapbtn apple" href="${MAPS.apple}" target="_blank" rel="noopener">${NAV}Apple Maps</a><a class="mapbtn google" href="${MAPS.google}" target="_blank" rel="noopener">${NAV}Google Maps</a></div>
+  <button class="copy" type="button" data-copy-addr>Copy address</button></div>`;
+}
+$$('.house-slot').forEach((el) => el.innerHTML = houseHTML());
+function bringLabel(r){ return r.bring === 'Other' ? (r.bringOther || 'Something to share') : (r.bring || ''); }
+function passHTML(r){
+  const coach = r.role === 'coach', first = String(r.player).trim().split(/\s+/)[0], last = String(r.player).trim().split(/\s+/).pop() || '';
+  const art = coach ? coachSVG({ fill:'#000', text:'#fff', stroke:'#fff', name: last }) : jerseySVG(r.jersey, { fill:'#fff', text:'#0059A3', stroke:'#000', name: last }).svg;
+  const going = r.attending;
+  const who = going ? [coach ? 'You' : (r.playerComing ? first : null), ...(r.others || [])].filter(Boolean) : [];
+  const diet = [...(r.diet || []).filter((d) => d !== 'Other'), r.dietOther].filter(Boolean).join(', ');
+  const rows = going ? [
+    ['Coming', who.length ? who.map(esc).join(', ') : 'Nobody yet'],
+    ['Bringing', esc(bringLabel(r)) || 'Nothing picked yet'],
+    ['Food needs', esc(diet) || 'None'],
+    r.moment ? ['Your answer', esc(r.moment)] : null,
+  ] : [
+    ['Status', `${esc(coach ? 'You' : first)} can't make it`],
+    r.moment ? ['Your note', esc(r.moment)] : null,
+  ];
+  return `<div class="pass ${going ? '' : 'out'}">
+    <div class="pass-top">${art}<div><span class="pass-k">${going ? "You're in" : "Can't make it"}</span><b class="pass-name">${esc(coach ? 'Coach ' + last : r.player)}</b><span class="pass-sub">Sunday, Oct 25, 3:30 to 5:30 PM</span></div></div>
+    <div class="pass-cut"></div>
+    <dl class="pass-rows">${rows.filter(Boolean).map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+    <div class="pass-acts"><button type="button" data-edit-rsvp>Change RSVP</button>${going ? '<button type="button" class="pri" data-pick="cal">Add to calendar</button>' : '<button type="button" class="pri share">Share the page</button>'}</div>
+  </div>`;
+}
+function renderMine(){
+  const me = store.get();
+  $('#mine').hidden = !me;
+  if (me) $('#mine-pass').innerHTML = passHTML(me);
+}
+document.addEventListener('click', async (e) => {
+  if (e.target.closest('[data-copy-addr]')) toast(await copyText(ADDRESS) ? 'Address copied' : "Couldn't copy the address");
+  if (e.target.closest('[data-edit-rsvp]')) editRSVP();
+  const sh = e.target.closest('.pass .share'); if (sh) shareIt();
+});
+
+/* ---------- Food sign-up ---------- */
+const BRING = [['Fresh fruit platter','🍉'],['Veggie tray with dip','🥕'],['Cookies','🍪'],['Cupcakes','🧁'],['Drinks','🥤'],['Other','✏️']];
+const countFor = (item) => { const row = BOARD && (BOARD.signup || []).find((x) => x.item === item); return row ? row.people.length : 0; };
+function renderSignup(rows){
+  $('#signup').innerHTML = BRING.map(([item, em]) => {
+    const row = rows.find((x) => x.item === item) || { people: [] };
+    const ppl = row.people;
+    const who = ppl.length ? ppl.map((p) => esc(item === 'Other' && p.what ? `${p.name} (${p.what})` : p.name)).join(', ') : (item === 'Other' ? 'Anything else you want to bring' : 'Nobody yet');
+    return `<li class="${ppl.length ? '' : 'zero'}"><span class="em" aria-hidden="true">${em}</span><span><b>${esc(item)}</b><small>${who}</small></span><span class="n" aria-label="${ppl.length} signed up">${ppl.length}</span></li>`;
+  }).join('');
+}
+function renderBring(){
+  const me = store.get();
+  $('#bring').innerHTML = BRING.map(([item, em]) => {
+    let n = countFor(item); if (me && me.attending && me.bring === item) n -= 1;
+    const sub = item === 'Other' ? 'Something not on the list' : n ? `${n} ${n === 1 ? 'family is' : 'families are'} bringing this` : 'Nobody yet';
+    return `<button type="button" class="opt" role="radio" aria-checked="${state.bring === item}" data-b="${esc(item)}"><span class="em" aria-hidden="true">${em}</span><span><b>${esc(item)}</b><small>${sub}</small></span><span class="dot" aria-hidden="true"></span></button>`;
+  }).join('');
+  $('#bo-wrap').hidden = state.bring !== 'Other';
+}
+$('#bring').onclick = (e) => {
+  const o = e.target.closest('.opt'); if (!o) return;
+  state.bring = state.bring === o.dataset.b ? '' : o.dataset.b;
+  $('#err').textContent = '';
+  renderBring(); bump($(`.opt[data-b="${CSS.escape(o.dataset.b)}"] .dot`));
+  if (state.bring === 'Other') setTimeout(() => $('#bringOther').focus(), 50);
+};
+$('#bringOther').oninput = (e) => state.bringOther = e.target.value;
+$('#bringOther').addEventListener('keydown', (e) => { if (e.key === 'Enter'){ e.preventDefault(); next(); } });
+
+/* ---------- RSVP flow ---------- */
+const sheet = $('#sheet'), scrim = $('#scrim'), sbody = $('#s-body');
+const state = { attending:null, player:'', jersey:'', playerComing:true, others:[], role:'player', bring:'', bringOther:'', diet:new Set(), dietOther:'', moment:'', phone:'' };
+let step = 'call', trail = [];
+const flow = () => state.attending === false ? ['call','player','last'] : ['call','player','crew','bring','last'];
+
+$('#chips').innerHTML = DIET.map((d) => `<button type="button" class="chip" data-d="${d}" aria-pressed="false">${d}</button>`).join('');
+$('#chips').onclick = (e) => {
+  const c = e.target.closest('.chip'); if (!c) return;
+  const d = c.dataset.d; state.diet.has(d) ? state.diet.delete(d) : state.diet.add(d);
+  c.setAttribute('aria-pressed', state.diet.has(d)); $('#do-wrap').hidden = !state.diet.has('Other');
+};
+const RM = '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+function renderPeople(focusLast){
+  $('#people').innerHTML = state.others.map((n, i) => `<li><input type="text" data-i="${i}" value="${esc(n)}" autocapitalize="words" enterkeyhint="done" maxlength="60" placeholder="Person ${i + 1} name" aria-label="Person ${i + 1} name"><button type="button" class="rm" data-rm="${i}" aria-label="Remove person ${i + 1}">${RM}</button></li>`).join('');
+  $('#ppl-count').textContent = state.others.length;
+  $('#add-person').hidden = state.others.length >= 15;
+  if (focusLast){ const ins = $$('#people input'); const el = ins[ins.length - 1]; if (el){ el.focus(); const li = el.closest('li'); tween(0, 1, (u) => { li.style.transform = `translateY(${(1 - u) * -12}px)`; li.style.opacity = clamp(u * 2); }, { k: 320, d: 26, dur: 0.5 }); } }
+}
+$('#add-person').onclick = () => { state.others.push(''); renderPeople(true); bump($('#ppl-count')); };
+$('#people').addEventListener('input', (e) => { if (e.target.dataset.i !== undefined) state.others[+e.target.dataset.i] = e.target.value; });
+$('#people').addEventListener('click', (e) => { const b = e.target.closest('[data-rm]'); if (!b) return; state.others.splice(+b.dataset.rm, 1); renderPeople(false); bump($('#ppl-count')); });
+$('#people').addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.target.matches('input')){ e.preventDefault(); e.target.blur(); } });
+const bump = (el) => el && tween(0, 1, (u) => el.style.transform = `scale(${1 + (1 - u) * 0.3})`, { k: 420, d: 18, dur: 0.5 });
+function drawPreview(){
+  const last = state.player.trim().split(/\s+/).pop() || '';
+  $('#preview').innerHTML = state.role === 'coach' ? coachSVG({ fill:'#000', text:'#fff', name: state.player.trim() ? last : 'Coach' }) : jerseySVG(state.jersey, { fill:'#0059A3', text:'#fff', name: state.player.trim() ? last : '' }).svg;
+}
+function setRole(r){
+  state.role = r;
+  $$('.seg button').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.role === r)));
+  const coach = r === 'coach'; if (coach) state.playerComing = true; else state.playerComing = $('#playerComing').checked;
+  $('#pl-title').textContent = coach ? 'Coach' : 'Your player';
+  $('#pl-label').textContent = coach ? 'Your name' : "Player's name";
+  $('#jersey-wrap').hidden = coach; $('#pl-row').classList.toggle('solo', coach);
+  $('#pc-wrap').hidden = coach;
+  $('#crew-sub').textContent = coach ? 'Add anyone coming with you.' : 'Add everyone coming with your player.';
+  drawPreview();
+}
+$$('.seg button').forEach((b) => b.onclick = () => { setRole(b.dataset.role); $('#player').focus(); });
+$('#player').addEventListener('input', (e) => { state.player = e.target.value; drawPreview(); });
+$('#jersey').addEventListener('input', (e) => { e.target.value = e.target.value.replace(/\D/g, '').slice(0,2); state.jersey = e.target.value; drawPreview(); bump($('#preview svg')); });
+$('#phone').addEventListener('input', (e) => { e.target.value = fmtPhone(e.target.value); state.phone = e.target.value; });
+$('#lk-phone').addEventListener('input', (e) => { e.target.value = fmtPhone(e.target.value); });
+$('#playerComing').onchange = (e) => { state.playerComing = e.target.checked; };
+$('#dietOther').oninput = (e) => state.dietOther = e.target.value;
+$('#moment').oninput = (e) => state.moment = e.target.value;
+$('#player').addEventListener('keydown', (e) => { if (e.key === 'Enter'){ e.preventDefault(); $('#jersey').focus(); } });
+$('#jersey').addEventListener('keydown', (e) => { if (e.key === 'Enter'){ e.preventDefault(); next(); } });
+$('#lk-phone').addEventListener('keydown', (e) => { if (e.key === 'Enter'){ e.preventDefault(); next(); } });
+
+function fill(r){
+  state.attending = !!r.attending; state.player = r.player || ''; state.jersey = r.jersey || '';
+  state.playerComing = r.attending ? r.playerComing !== false : true;
+  state.others = r.attending ? [...(r.others || [])] : []; state.diet = new Set(r.diet || []); state.dietOther = r.dietOther || '';
+  state.moment = r.moment || ''; state.phone = fmtPhone(r.phone);
+  setRole(r.role === 'coach' ? 'coach' : 'player');
+  state.bring = r.bring || ''; state.bringOther = r.bringOther || ''; $('#bringOther').value = state.bringOther; renderBring();
+  $('#player').value = state.player; $('#jersey').value = state.jersey; $('#playerComing').checked = state.playerComing;
+  renderPeople(false);
+  $$('.chip').forEach((c) => c.setAttribute('aria-pressed', state.diet.has(c.dataset.d))); $('#do-wrap').hidden = !state.diet.has('Other');
+  $('#dietOther').value = state.dietOther; $('#moment').value = state.moment; $('#phone').value = state.phone;
+  markCall();
+}
+function markCall(){ $$('.call').forEach((b) => b.setAttribute('aria-pressed', String(state.attending !== null && b.dataset.att === (state.attending ? 'yes' : 'no')))); }
+
+function renderProg(){
+  const f = flow(), i = f.indexOf(step);
+  $('#prog').innerHTML = f.map((_, k) => `<i><b style="transform:scaleX(${k < i ? 1 : 0})"></b></i>`).join('');
+  const cur = $$('#prog b')[i];
+  if (cur) tween(0, 1, (u) => cur.style.transform = `scaleX(${u})`, { k: 200, d: 28, dur: 0.6 });
+  $('#prog').style.visibility = (step === 'done' || step === 'find') ? 'hidden' : 'visible';
+}
+function show(name, dir = 1){
+  step = name; $('#err').textContent = '';
+  $$('.step').forEach((s) => s.hidden = s.dataset.step !== name);
+  const el = $(`.step[data-step="${name}"]`);
+  const nb = $('#next');
+  $('#s-foot').hidden = name === 'call' || name === 'done';
+  nb.textContent = name === 'last' ? 'Send RSVP' : name === 'find' ? 'Find' : 'Next';
+  const noBack = name === 'call' || name === 'done';
+  $('#back').setAttribute('aria-hidden', String(noBack)); $('#back').tabIndex = noBack ? -1 : 0;
+  if (name === 'last') $('#moment-lbl').innerHTML = state.attending ? 'What was the best thing about this season? <small>Optional. It shows on the page for the team.</small>' : 'Leave a note for the team <small>Optional. It shows on the page.</small>';
+  if (name === 'player') drawPreview();
+  if (name === 'bring') renderBring();
+  renderProg();
+  sbody.scrollTop = 0;
+  tween(0, 1, (u) => { el.style.transform = `translateX(${(1 - u) * 40 * dir}px)`; el.style.opacity = clamp(u * 2.5); }, { k: 320, d: 32, dur: 0.5 });
+}
+function go(name){ trail.push(step); show(name, 1); }
+$('#back').onclick = () => { if (!trail.length) return; show(trail.pop(), -1); };
+
+$$('.call').forEach((b) => b.onclick = () => {
+  state.attending = b.dataset.att === 'yes'; markCall();
+  if (b.animate) b.animate([{ transform:'scale(.96)' }, { transform:'scale(1)' }], { duration: 240, easing:'cubic-bezier(.3,1.5,.5,1)' });
+  setTimeout(() => { go('player'); if (!state.player) setTimeout(() => $('#player').focus(), 380); }, 200);
+});
+$('#to-find').onclick = () => { go('find'); setTimeout(() => $('#lk-phone').focus(), 350); };
+
+function fail(msg, focusEl){
+  const e = $('#err'); e.textContent = msg; if (focusEl) focusEl.focus();
+  tween(0, 1, (u) => e.style.transform = `translateX(${Math.sin(u * Math.PI * 4) * (1 - u) * 8}px)`, { k: 100, d: 10, dur: 0.4 });
+}
+async function next(){
+  $('#err').textContent = '';
+  if (step === 'find'){
+    const b = $('#next'); b.disabled = true;
+    try {
+      const j = await api('/api/lookup', { method:'POST', body: JSON.stringify({ phone: $('#lk-phone').value }) });
+      store.set(j.record); setLocked(false); seek(DUR); fill(j.record); renderMine(); updateDock(); trail = []; showDone(j.record); toast('Found your RSVP');
+    } catch (ex) { fail(ex.message, $('#lk-phone')); } finally { b.disabled = false; }
+    return;
+  }
+  if (step === 'player'){
+    if (state.player.trim().length < 2) return fail(state.role === 'coach' ? 'Add your name.' : "Add your player's name.", $('#player'));
+    return go(state.attending ? 'crew' : 'last');
+  }
+  if (step === 'crew'){
+    state.others = state.others.map((n) => n.trim());
+    const blank = state.others.findIndex((n) => !n);
+    if (blank >= 0){ renderPeople(false); return fail('Add a name for each person, or remove the empty one.', $$('#people input')[blank]); }
+    if (!state.playerComing && state.others.length === 0) return fail('Add at least one person who is coming.');
+    return go('bring');
+  }
+  if (step === 'bring'){
+    if (!state.bring) return fail('Pick something to bring.');
+    if (state.bring === 'Other' && !state.bringOther.trim()) return fail("Tell us what you're bringing.", $('#bringOther'));
+    return go('last');
+  }
+  if (step === 'last') return send();
+}
+$('#next').onclick = next;
+
+async function send(){
+  if (digits(state.phone).length !== 10) return fail('Add a 10-digit mobile number so you can change your RSVP later.', $('#phone'));
+  const b = $('#next'); b.disabled = true; b.textContent = 'Sending';
+  try {
+    const payload = { attending: state.attending, player: state.player, jersey: state.jersey, phone: state.phone, playerComing: state.playerComing, others: state.others, bring: state.bring, bringOther: state.bringOther, role: state.role, diet: [...state.diet], dietOther: state.dietOther, moment: state.moment, website: $('#website').value };
+    const j = await api('/api/rsvp', { method:'POST', body: JSON.stringify(payload) });
+    store.set(j.record); thump(); setLocked(false); seek(DUR); showDone(j.record); renderMine(); trail = []; loadBoard(true);
+  } catch (ex) { fail(ex.message); }
+  finally { b.disabled = false; b.textContent = 'Send RSVP'; }
+}
+
+function showDone(r){
+  const first = String(r.player).split(' ')[0];
+  const d = $('.step[data-step="done"]');
+  d.classList.toggle('out', !r.attending);
+  const last = r.player.trim().split(/\s+/).pop() || '';
+  $('#done-art').innerHTML = r.role === 'coach' ? coachSVG({ name: last }).replace('<svg ', '<svg class="big" ') : `<svg class="big" viewBox="0 0 100 100" aria-hidden="true">${jerseySVG(r.jersey, { fill: r.attending ? '#0059A3' : '#fff', text: r.attending ? '#fff' : '#000', name: last }).inner}</svg>`;
+  if (r.attending){
+    const n = (r.others || []).length;
+    const who = [r.role === 'coach' ? 'you' : r.playerComing ? first : null, n ? (r.playerComing ? plural(n, 'other') : (n === 1 ? r.others[0] : plural(n, 'person').replace('persons', 'people'))) : null].filter(Boolean).join(' and ');
+    $('#done-title').textContent = "You're in";
+    $('#done-line').textContent = `We've got ${who} down for Sunday, Oct 25 at 3:30.`;
+    const br = r.bring === 'Other' ? r.bringOther : r.bring ? r.bring.toLowerCase() : '';
+    $('#done-food').textContent = br ? `You're bringing ${br}. Thank you!` : (FOOD ? 'Food: ' + FOOD : '');
+  } else {
+    $('#done-title').textContent = "We'll miss you";
+    $('#done-line').textContent = r.role === 'coach' ? 'Thanks for letting us know. You can change this any time.' : `Thanks for letting us know about ${first}. You can change this any time.`;
+    $('#done-food').textContent = '';
+  }
+  $('#done-pass').innerHTML = passHTML(r);
+  const best = (BOARD && BOARD.moments || []).slice(-3).reverse();
+  $('#done-best').hidden = !best.length;
+  $('#done-quotes').innerHTML = best.map((m) => `<li><p>${esc(m.text)}</p><cite>${esc(m.name)}${m.jersey ? ', #' + esc(m.jersey) : ''}</cite></li>`).join('');
+  $('#done-where').hidden = !r.attending;
+  show('done');
+  $('#done-art').innerHTML = '';
+  const art = $('#done-pass .pass-top svg');
+  tween(0, 1, (u) => art.style.transform = `translateY(${(1 - u) * 50}px) scale(${0.4 + 0.6 * u}) rotate(${(1 - u) * -18}deg)`, { k: 200, d: 14, dur: 1.2 });
+  updateDock();
+}
+function editRSVP(){
+  const me = store.get(); if (me) fill(me);
+  trail = []; show('call', -1);
+  if (sheet.hidden) openSheet(sheet, scrim);
+}
+async function closeAndGo(id){ await closeRSVP(); const el = $(id); if (el) el.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'start' }); }
+$('#see-best').onclick = () => closeAndGo('#quotes-sec');
+$('#see-page').onclick = () => closeAndGo('#mine');
+
+async function openRSVP(){
+  const me = store.get();
+  trail = [];
+  if (me){ fill(me); showDone(me); } else show('call');
+  await openSheet(sheet, scrim);
+  (me ? $('#see-page') : $('.call.in')).focus({ preventScroll: true });
+}
+const closeRSVP = () => closeSheet(sheet, scrim);
+$('#open').onclick = openRSVP;
+$('#close').onclick = closeRSVP;
+scrim.onclick = closeRSVP;
+dragToClose(sheet, [$('#grab'), $('#s-head')], closeRSVP);
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if (!pick.hidden) closePick(); else if (!sheet.hidden) closeRSVP();
+});
+
+/* A ball-on-floor thump when an RSVP lands. Synthesized, quiet, only after a tap. */
+function thump(){
+  try {
+    const A = window.AudioContext || window.webkitAudioContext; if (!A) return;
+    const ac = thump.ac || (thump.ac = new A()), t = ac.currentTime;
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(48, t + 0.18);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.5, t + 0.006); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+    o.connect(g).connect(ac.destination); o.start(t); o.stop(t + 0.3);
+    const nb = ac.createBuffer(1, Math.floor(ac.sampleRate * 0.06), ac.sampleRate), ch = nb.getChannelData(0);
+    let s = 7; for (let i = 0; i < ch.length; i++){ s = (s * 1664525 + 1013904223) >>> 0; ch[i] = (s / 2147483648 - 1) * Math.exp(-i / (ac.sampleRate * 0.008)); }
+    const src = ac.createBufferSource(), g2 = ac.createGain(); g2.gain.value = 0.22; src.buffer = nb; src.connect(g2).connect(ac.destination); src.start(t);
+  } catch {}
+}
+
+renderPeople(false);
+
+/* Returning families */
+updateDock();
+const saved = store.get();
+renderMine();
+if (saved) api('/api/lookup', { method:'POST', body: JSON.stringify({ phone: saved.phone }) }).then((j) => { store.set(j.record); updateDock(); renderMine(); renderBoard(false); }).catch(() => {});
+</script>
+</body>
+</html>

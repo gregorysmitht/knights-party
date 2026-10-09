@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="noindex">
+<title>Host view · Knights Party</title>
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--knight:#0059A3;--deep:#003C73;--cape:#1A93D0;--steel:#A9B4C0;--card:#0B0D10;--edge:#23272D;--error:#FF6B6B;
+  --display:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;--body:Barlow,"Helvetica Neue",Arial,sans-serif;
+  --st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{background:#000}
+body{margin:0;color:#fff;font:400 16px/1.45 var(--body)}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--cape);outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;background:rgba(0,0,0,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:calc(var(--st) + 10px) 16px 10px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--edge)}
+.top img{width:40px;height:40px}
+.top b{font:900 26px/1 var(--display);text-transform:uppercase}
+.top span{display:block;color:var(--steel);font-size:13px}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px calc(48px + var(--sb))}
+h2{font:900 34px/1 var(--display);text-transform:uppercase;margin:30px 0 12px}
+.gate{max-width:420px;margin:0 auto;padding:12vh 20px 40px}
+.gate img{width:96px;height:96px;display:block;margin:0 0 14px}
+.gate h1{font:900 56px/.9 var(--display);text-transform:uppercase;margin:0 0 8px}
+.gate p{color:var(--steel);margin:0 0 18px}
+.gate form{display:grid;gap:10px}
+input[type=password],input[type=text],textarea{width:100%;border:2px solid var(--edge);background:#111418;color:#fff;padding:14px;border-radius:12px;font-size:17px}
+input:focus,textarea:focus{border-color:var(--cape);outline:none}
+.btn{border:2px solid var(--edge);background:var(--card);color:#fff;padding:11px 14px;font-weight:700;border-radius:12px;text-align:center}
+.btn.primary{background:var(--knight);border-color:var(--knight);height:54px;font:900 24px/1 var(--display);text-transform:uppercase}
+.btn:disabled{opacity:.5;cursor:progress}
+.err{color:var(--error);font-weight:700;margin:0}
+.err:empty{display:none}
+
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+.stat{background:var(--card);border:1px solid var(--edge);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font:900 48px/1 var(--display);font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--steel);font-weight:600}
+.stat.big{grid-column:1/-1;background:linear-gradient(180deg,var(--knight),var(--deep));border-color:var(--knight)}
+.stat.big b{font-size:80px}
+.stat.big span{color:#DCEBFA}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.tools a{text-decoration:none}
+.diet{margin:12px 0 0;color:var(--steel)}
+.diet b{color:#fff}
+
+.settings{background:var(--card);border:1px solid var(--edge);border-radius:16px;padding:16px;display:grid;gap:14px}
+.settings label{display:grid;gap:6px;font-weight:700}
+.settings small{font-weight:400;color:var(--steel)}
+.settings textarea{min-height:84px;resize:vertical}
+.settings .switch{display:flex;align-items:center;gap:12px;font-weight:700}
+.settings .switch input{width:24px;height:24px;accent-color:var(--knight)}
+.settings .actions{display:flex;gap:12px;align-items:center}
+.settings .actions .btn{flex:1}
+.saved{color:var(--cape);font-weight:700}
+
+.filters{display:flex;gap:6px;overflow-x:auto;margin:0 -16px 12px;padding:0 16px;scrollbar-width:none}
+.filters button{flex:none;border:2px solid var(--edge);background:var(--card);border-radius:999px;padding:8px 14px;font-weight:700}
+.filters button[aria-pressed="true"]{border-color:#fff;background:#fff;color:#000}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fam{background:var(--card);border:1px solid var(--edge);border-radius:16px;padding:14px;display:grid;grid-template-columns:56px 1fr;gap:4px 14px}
+.fam.out{opacity:.75}
+.num{grid-row:span 3;width:56px;height:56px;border-radius:12px;background:var(--knight);color:#fff;display:grid;place-items:center;font:900 30px/1 var(--display)}
+.fam.out .num{background:#3A4048}
+.fam h3{margin:0;font-size:18px;font-weight:700;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.tag{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:rgba(26,147,208,.18);color:#8FD0F2}
+.fam.out .tag{background:#23272D;color:var(--steel)}
+.meta{color:var(--steel);font-size:15px}
+.meta a{color:#8FD0F2;font-weight:700;text-decoration:none}
+.bringing{color:#8FD0F2;font-weight:700;font-size:15px}
+.alert{color:#FFB4A8;font-weight:700;font-size:15px}
+.note{font-size:15px;border-left:3px solid var(--cape);padding-left:10px;margin-top:4px}
+.note.hid{opacity:.5}
+.row-actions{grid-column:2;display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
+.row-actions button{background:none;border:0;padding:4px 0;font-weight:700;font-size:14px;color:#8FD0F2}
+.row-actions .danger{color:var(--error)}
+.empty{border:2px dashed var(--edge);border-radius:16px;padding:20px;color:var(--steel);text-align:center}
+.toast{position:fixed;left:50%;top:calc(var(--st) + 12px);transform:translate(-50%,-180%);background:#fff;color:#000;padding:11px 18px;border-radius:999px;font-weight:700;transition:transform .3s cubic-bezier(.3,1.3,.5,1);z-index:9}
+.toast.on{transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<header class="top"><img src="/knight.png" alt=""><div><b>Host view</b><span>Knights Volleyball End of Season Party, Sun Oct 25</span></div></header>
+
+<div class="gate" id="gate">
+  <img src="/knight.png" alt=""><h1>Hosts only</h1>
+  <p>Enter the host passcode to see RSVPs.</p>
+  <form id="gate-form">
+    <input type="password" id="code" autocomplete="current-password" placeholder="Passcode" aria-label="Host passcode">
+    <button class="btn primary" type="submit">Open host view</button>
+    <p class="err" id="gate-err" role="alert"></p>
+  </form>
+</div>
+
+<main class="wrap" id="app" hidden>
+  <div class="stats" aria-live="polite">
+    <div class="stat big"><b id="s-people">0</b><span>people coming</span></div>
+    <div class="stat"><b id="s-players">0</b><span>players</span></div><div class="stat"><b id="s-coaches">0</b><span>coaches</span></div>
+    <div class="stat"><b id="s-others">0</b><span>others</span></div>
+    <div class="stat"><b id="s-out">0</b><span>can't make it</span></div>
+  </div>
+  <p class="diet" id="diet"></p>
+  <div class="tools">
+    <button class="btn" id="refresh">Refresh</button>
+    <button class="btn" id="csv">Download spreadsheet</button>
+    <button class="btn" id="phones">Copy all phone numbers</button>
+    <a class="btn" href="/">Open guest page</a>
+  </div>
+
+  <h2>Page settings</h2>
+  <div class="settings">
+    <label>Food note <small>Shows on the guest page under Food.</small><textarea id="foodNote" maxlength="400"></textarea></label>
+    <label class="switch"><input type="checkbox" id="open"> Accept new RSVPs</label>
+    <div class="actions"><button class="btn primary" id="save">Save settings</button><span class="saved" id="saved"></span></div>
+  </div>
+
+  <h2>RSVPs</h2>
+  <div class="filters" role="group" aria-label="Filter RSVPs">
+    <button data-f="all" aria-pressed="true">All</button>
+    <button data-f="in" aria-pressed="false">Coming</button>
+    <button data-f="out" aria-pressed="false">Can't make it</button>
+    <button data-f="diet" aria-pressed="false">Food needs</button>
+  </div>
+  <ul class="list" id="list"></ul>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtPhone = (d) => `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+let CODE = ''; try { CODE = sessionStorage.getItem('kvb.host') || ''; } catch {}
+let GUESTS = [], FILTER = 'all', toastT;
+function toast(m){ const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2200); }
+async function api(path, opts = {}){
+  const r = await fetch(path, { ...opts, headers: { 'content-type':'application/json', 'x-host-code': CODE } });
+  let j = {}; try { j = await r.json(); } catch {}
+  if (!r.ok) { const e = new Error(j.error || 'Something went wrong. Try again.'); e.status = r.status; throw e; }
+  return j;
+}
+const bringText = (g) => g.bring === 'Other' ? (g.bringOther || 'Other') : (g.bring || '');
+const dietText = (g) => [...(g.diet || []).filter((d) => d !== 'Other'), g.dietOther].filter(Boolean).join(', ');
+
+async function load(){
+  const [g, s] = await Promise.all([api('/api/guests'), api('/api/settings')]);
+  GUESTS = g.guests;
+  $('#foodNote').value = s.foodNote || ''; $('#open').checked = s.open !== false;
+  render();
+}
+
+function render(){
+  const going = GUESTS.filter((g) => g.attending);
+  const coaches = going.filter((g) => g.role === 'coach').length;
+  const players = going.filter((g) => g.playerComing && g.role !== 'coach').length;
+  const others = going.reduce((n, g) => n + (g.others || []).length, 0);
+  $('#s-people').textContent = players + coaches + others; $('#s-coaches').textContent = coaches; $('#s-players').textContent = players;
+  $('#s-others').textContent = others; $('#s-out').textContent = GUESTS.length - going.length;
+  const counts = {}; going.forEach((g) => (g.diet || []).forEach((d) => counts[d] = (counts[d] || 0) + 1));
+  const dl = Object.entries(counts).map(([d, n]) => `${esc(d)} ${n}`).join(', ');
+  const bc = {}; going.forEach((g) => { const b = bringText(g); if (b) bc[b] = (bc[b] || 0) + 1; });
+  const bl = Object.entries(bc).map(([d, n]) => `${esc(d)} ${n}`).join(', ');
+  $('#diet').innerHTML = (dl ? `<b>Food needs:</b> ${dl}` : 'No food needs reported yet.') + '<br>' + (bl ? `<b>Bringing:</b> ${bl}` : 'No one has signed up to bring anything yet.');
+
+  const rows = GUESTS.filter((g) => FILTER === 'all' || (FILTER === 'in' && g.attending) || (FILTER === 'out' && !g.attending) || (FILTER === 'diet' && g.attending && (g.diet || []).length));
+  $('#list').innerHTML = rows.length ? rows.map((g) => {
+    const who = g.attending ? [g.role === 'coach' ? 'Coach' : g.playerComing ? 'Player' : 'Player not coming', (g.others || []).length ? plural(g.others.length, 'other') : null].filter(Boolean).join(' + ') : "Can't make it";
+    const d = dietText(g);
+    return `<li class="fam ${g.attending ? '' : 'out'}">
+      <div class="num">${g.role === 'coach' ? 'C' : esc(g.jersey) || 'K'}</div>
+      <h3>${esc(g.player)} <span class="tag">${g.role === 'coach' ? 'Coach, ' : ''}${g.attending ? 'Coming' : 'Out'}</span></h3>
+      <div class="meta">${esc(who)}${(g.others || []).length ? `: ${esc(g.others.join(', '))}` : ''} <br><a href="sms:${g.phone}">${fmtPhone(g.phone)}</a></div>
+      <div>${bringText(g) ? `<div class="bringing">Bringing: ${esc(bringText(g))}</div>` : ''}${d ? `<div class="alert">Food: ${esc(d)}</div>` : ''}${g.moment ? `<div class="note ${g.hidden ? 'hid' : ''}">${esc(g.moment)}${g.hidden ? ' (hidden from guest page)' : ''}</div>` : ''}</div>
+      <div class="row-actions">
+        ${g.moment ? `<button data-act="${g.hidden ? 'show' : 'hide'}" data-p="${g.phone}">${g.hidden ? 'Show note on page' : 'Hide note from page'}</button>` : ''}
+        <button class="danger" data-act="remove" data-p="${g.phone}">Remove RSVP</button>
+      </div></li>`;
+  }).join('') : '<li class="empty">No RSVPs here yet. Share the guest page link with the team.</li>';
+}
+
+$('#list').onclick = async (e) => {
+  const b = e.target.closest('button[data-act]'); if (!b) return;
+  const g = GUESTS.find((x) => x.phone === b.dataset.p);
+  if (b.dataset.act === 'remove' && !confirm(`Remove the RSVP for ${g.player}? This can't be undone.`)) return;
+  b.disabled = true;
+  try {
+    await api('/api/manage', { method:'POST', body: JSON.stringify({ phone: b.dataset.p, action: b.dataset.act }) });
+    toast(b.dataset.act === 'remove' ? 'RSVP removed' : b.dataset.act === 'hide' ? 'Note hidden' : 'Note shown');
+    await load();
+  } catch (ex) { toast(ex.message); b.disabled = false; }
+};
+document.querySelectorAll('.filters button').forEach((b) => b.onclick = () => {
+  FILTER = b.dataset.f; document.querySelectorAll('.filters button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); render();
+});
+$('#refresh').onclick = async () => { await load(); toast('Up to date'); };
+$('#save').onclick = async () => {
+  const b = $('#save'); b.disabled = true; $('#saved').textContent = '';
+  try { await api('/api/settings', { method:'POST', body: JSON.stringify({ foodNote: $('#foodNote').value, open: $('#open').checked }) }); $('#saved').textContent = 'Saved'; }
+  catch (ex) { toast(ex.message); } finally { b.disabled = false; }
+};
+$('#phones').onclick = async () => {
+  const nums = GUESTS.filter((g) => g.attending).map((g) => fmtPhone(g.phone)).join(', ');
+  if (!nums) return toast('No one coming yet');
+  try { await navigator.clipboard.writeText(nums); toast('Copied numbers for families coming'); } catch { prompt('Copy these numbers', nums); }
+};
+$('#csv').onclick = () => {
+  const cols = ['Name','Role','Jersey','Coming','Player coming','Others coming','Their names','Phone','Bringing','Food needs','Note','Last updated'];
+  const q = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
+  const lines = [cols.map(q).join(',')].concat(GUESTS.map((g) => [g.player, g.role === 'coach' ? 'Coach' : 'Player', g.jersey, g.attending ? 'Yes' : 'No', g.attending && g.playerComing ? 'Yes' : 'No', (g.others || []).length, (g.others || []).join(', '), fmtPhone(g.phone), bringText(g), dietText(g), g.moment, new Date(g.updatedAt).toLocaleString()].map(q).join(',')));
+  const url = URL.createObjectURL(new Blob([lines.join('\n')], { type:'text/csv' }));
+  const a = Object.assign(document.createElement('a'), { href: url, download: 'knights-party-rsvps.csv' });
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+
+async function enter(){
+  try { await load(); $('#gate').hidden = true; $('#app').hidden = false; try { sessionStorage.setItem('kvb.host', CODE); } catch {} }
+  catch (ex) { $('#gate-err').textContent = ex.message; $('#gate').hidden = false; $('#app').hidden = true; }
+}
+$('#gate-form').onsubmit = (e) => { e.preventDefault(); CODE = $('#code').value.trim(); $('#gate-err').textContent = ''; enter(); };
+if (CODE) enter();
+</script>
+</body>
+</html>

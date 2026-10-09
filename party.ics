@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Knights Volleyball//Season Party//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:knights-vb-end-of-season-2026@smith
+DTSTAMP:20261008T210000Z
+DTSTART:20261025T193000Z
+DTEND:20261025T213000Z
+SUMMARY:Knights Volleyball End of Season Party
+LOCATION:2008 Center Drive\, Casselberry\, FL
+DESCRIPTION:Geneva Knights varsity volleyball end of season party. Players and parents welcome. Hosted by Audrey & the Smiths.
+END:VEVENT
+END:VCALENDAR
