@@ -12,7 +12,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#06162B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Knights Party">
@@ -33,15 +33,15 @@
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none!important}
-html{-webkit-text-size-adjust:100%;background:var(--black)}
+html{-webkit-text-size-adjust:100%;background:#06162B}
 body{margin:0;background:var(--black);color:var(--white);font:400 17px/1.45 var(--body);overscroll-behavior-y:none}
 button,input,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 :focus-visible{outline:3px solid var(--cape);outline-offset:3px}
 
 /* ================= Opening: the court ================= */
-.hero{position:relative;height:68svh;min-height:460px;max-height:720px;padding:calc(var(--st) + 12px) 12px 0;background:var(--black);overflow:hidden}
-.court{position:relative;height:100%;max-width:470px;margin:0 auto;overflow:hidden;background:radial-gradient(110% 55% at 50% 30%,#10345F 0%,#071A33 45%,#000 100%)}
+.hero{position:relative;height:68svh;min-height:460px;max-height:720px;padding:0;background:linear-gradient(180deg,#06162B 0 40%,#00478A 40%);overflow:hidden}
+.court{position:relative;height:100%;max-width:470px;margin:0 auto;overflow:hidden;background:radial-gradient(110% 55% at 50% 34%,#12396A 0%,#071A33 48%,#06162B 100%)}
 .floor{position:absolute;left:-20px;right:-20px;top:43%;bottom:-2px;transform-origin:50% 0;transform:scaleY(0);
   background:radial-gradient(70% 90% at 50% 0%,rgba(26,147,208,.5),transparent 60%),linear-gradient(180deg,#0A66B8 0%,#0059A3 35%,#00478A 100%)}
 .floor:after{content:"";position:absolute;left:0;right:0;top:0;height:14%;background:linear-gradient(180deg,rgba(0,0,0,.45),transparent)}
@@ -60,7 +60,7 @@ button{cursor:pointer}
 .net .ant{position:absolute;top:-34px;height:calc(100% + 42px);width:5px;background:repeating-linear-gradient(180deg,#E53935 0 9px,#fff 9px 18px);border-radius:3px}
 .net .ant.l{left:-3px}.net .ant.r{right:-3px}
 
-.top{position:absolute;left:0;right:0;top:0;padding:7% 7% 0;z-index:3}
+.top{position:absolute;left:0;right:0;top:0;padding:calc(var(--st) + 6%) 7% 0;z-index:3}
 h1{margin:0;font:900 60px/.84 var(--display);text-transform:uppercase;letter-spacing:-.005em;transform:rotate(-2.5deg);transform-origin:50% 50%;width:max-content}
 h1 .w{display:block;width:max-content;white-space:nowrap}
 h1 .l1{color:#fff;text-shadow:0 .055em 0 var(--knight),0 .11em 0 #003366}
@@ -155,8 +155,8 @@ body.locked .dock-btn{background:var(--cape);color:#fff}
 
 /* ================= Dock ================= */
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 12px calc(12px + var(--sb));
-  background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
-  border-top:1px solid rgba(255,255,255,.12);transform:translateY(110%)}
+  background:rgba(0,34,70,.78);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  border-top:1px solid rgba(255,255,255,.14)}
 .dock-in{max-width:470px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
 .dock-btn{height:60px;border:0;background:#fff;color:#000;font:900 28px/1 var(--display);text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:14px}
 .dock-btn:active{transform:scale(.98)}
@@ -177,7 +177,7 @@ h2{font:900 44px/.9 var(--display);text-transform:uppercase;margin:0 0 18px}
 .lineup-sec .sec>h2:after{background:rgba(255,255,255,.28)}
 
 /* Bottom strip of the hero: the floor keeps going, then the banner and the scroll cue */
-.more{flex:none;width:100%;max-width:470px;margin:0 auto;background:linear-gradient(180deg,#00478A,#00336A);overflow:hidden;padding:0 0 4px}
+more{flex:none;width:100%;max-width:470px;margin:0 auto;background:#00478A;overflow:hidden;padding:0 0 4px}
 .more .ticker-wrap{padding:4px 0 6px}
 .more .track span{font-size:24px}
 .more .track i{width:15px;height:15px}
@@ -311,6 +311,7 @@ button.tile:active{background:#14181D}
 .quotes p{margin:0;font:700 24px/1.08 var(--display);text-transform:uppercase}
 .quotes cite{display:block;font-style:normal;color:var(--steel);font-size:14px;margin-top:8px}
 
+main{background:linear-gradient(180deg,#00478A 0,#002A57 90px,#000 300px)}
 footer{padding:40px 20px calc(var(--dock) + 30px);text-align:center;color:var(--steel);font-size:15px;position:relative;overflow:hidden}
 .f-knight{width:120px;height:120px;display:block;margin:0 auto 4px;filter:drop-shadow(0 10px 0 rgba(26,147,208,.25))}
 .rally{margin:10px 0 0;font:900 min(24vw,110px)/.9 var(--display);text-transform:uppercase;color:#fff;letter-spacing:-.01em}
@@ -724,21 +725,21 @@ const P = (id) => POSE[id];
 const FLY = 0.42; // how long a flight takes
 // Each hero: where she flies in from (x, y, lean, size) and when she takes off. Landing = start + FLY.
 const HERO = [
-  ['p9',   0.60, [-0.25,-0.35,-35,1.4]],   // swoops in from the top left
-  ['p6',   0.78, [0.25,-0.4,0,1.5]],       // straight down
-  ['p11',  0.96, [-0.25,1.25,30,1.3]],     // rises from the bottom left
-  ['p8',   1.14, [1.25,-0.35,35,1.4]],     // swoops in from the top right
-  ['p10',  1.32, [1.35,BY-0.12,25,1.4]],   // flies in low from the right
-  ['p1',   0.25, [-0.35,FY-0.25,-30,1.45]], // first in, from the left
-  ['p2',   0.42, [0.32,-0.45,0,1.5]],      // straight down, fast
-  ['p7',   1.50, [1.25,1.25,30,1.3]],      // up from the bottom right
-  ['p3',   1.68, [1.35,-0.25,40,1.4]],     // from the top right
-  ['p13',  1.86, [0.77,1.35,0,1.3]],       // rockets up from the bottom
-  ['coach',2.10, [1.35,0.5,20,1.3]],       // coach lands on the sideline
+  ['p9',   1.35, [-0.25,-0.35,-35,1.4]],   // swoops in from the top left
+  ['p6',   1.53, [0.25,-0.4,0,1.5]],       // straight down
+  ['p11',  1.71, [-0.25,1.25,30,1.3]],     // rises from the bottom left
+  ['p8',   1.89, [1.25,-0.35,35,1.4]],     // swoops in from the top right
+  ['p10',  2.07, [1.35,BY-0.12,25,1.4]],   // flies in low from the right
+  ['p1',   1.00, [-0.35,FY-0.25,-30,1.45]], // first in, from the left
+  ['p2',   1.17, [0.32,-0.45,0,1.5]],      // straight down, fast
+  ['p7',   2.25, [1.25,1.25,30,1.3]],      // up from the bottom right
+  ['p3',   2.43, [1.35,-0.25,40,1.4]],     // from the top right
+  ['p13',  2.61, [0.77,1.35,0,1.3]],       // rockets up from the bottom
+  ['coach',2.85, [1.35,0.5,20,1.3]],       // coach lands on the sideline
 ];
 const ACTORS = HERO.map(([id, start, from]) => ({ id, start, land: start + FLY, keys: [[start, from[0], from[1], from[2], from[3]], [start + FLY, P(id)[0], P(id)[1], 0, 1, 260, 24]] }));
 const RALLY = ['p1','p10','p13','p9','p7','p6','p3','p11','p2','p8'];   // who the ball goes to, in order, forever
-const T_RALLY = 2.7, HOP = 0.55, ARC = 0.17;
+const T_RALLY = 3.45, HOP = 0.55, ARC = 0.17;
 const BURST_SVG = '<svg viewBox="-40 -40 80 80"><g fill="#fff" stroke="#0059A3" stroke-width="2" stroke-linejoin="round"><path d="M0-36L7-9 36 0 7 9 0 36-7 9-36 0-9-7Z"/></g><g fill="#1A93D0"><circle cx="30" cy="-26" r="4"/><circle cx="-31" cy="-20" r="3"/><circle cx="28" cy="26" r="3"/><circle cx="-26" cy="27" r="4"/></g></svg>';
 stage.innerHTML = ACTORS.map((a) => `<div class="actor" data-id="${a.id}"><img src="/team/${a.id}.webp" alt="" draggable="false"></div>`).join('');
 fxLayer.innerHTML = `<div class="burst">${BURST_SVG}</div>` + ACTORS.map(() => '<div class="lring"></div>').join('');
@@ -752,7 +753,7 @@ function trackAt(keys, t, idx){
 }
 const bumpCurve = (dt) => dt > 0 && dt < 0.32 ? Math.sin(Math.PI * dt / 0.32) : 0;
 function draw(el, L, u){ if (u >= 1){ el.style.strokeDasharray = 'none'; return; } el.style.strokeDasharray = `${L} ${L}`; el.style.strokeDashoffset = L * (1 - u); }
-const T_FLASH = 3.95, T_TITLE = 4.05, DUR = 5.0;
+const T_TITLE = 0.3, T_FLASH = 3.3, DUR = 3.6;
 function seek(t, idle = 0){
   const W = court.clientWidth, H = court.clientHeight;
   // the gym: floor rolls out from the net line, lines draw, net drops onto its posts
@@ -810,19 +811,19 @@ function seek(t, idle = 0){
     burstEl.style.transform = `translate(${from[0] * W}px, ${(from[1] - 0.09) * H}px) scale(${0.25 + bu * 0.6}) rotate(${bu * 50}deg)`;
   }
   ring.style.opacity = 0;
-  // say cheese: the photo flash, then the title slams in over the picture
+  // the poster goes up first; say cheese when the coach lands
   const fl = t - T_FLASH;
   flash.style.opacity = fl < 0 ? 0 : fl < 0.08 ? 1 : Math.max(0, 1 - (fl - 0.08) / 0.5);
-  $('#l2').style.transform = `translateX(${(1 - spring(t - T_TITLE - 0.35, 200, 22)) * 120}%)`;
+  const l2s = spring(t - T_TITLE - 0.35, 200, 22);
+  $('#l2').style.transform = `translateX(${(1 - l2s) * 120}%)`; $('#l2').style.opacity = t >= T_TITLE + 0.35 ? 1 : 0;
   $('.hb-in').style.transform = `translateX(${(1 - spring(t - T_TITLE - 0.45, 170, 22)) * 110}%)`;
-  $('#confetti').classList.toggle('on', t >= T_TITLE + 0.2);
+  $('#confetti').classList.toggle('on', t >= T_FLASH);
   chars.forEach((c, i) => {
     const s = spring(t - T_TITLE - i * 0.03, 340, 24);
     c.style.opacity = clamp((t - T_TITLE - i * 0.03) * 14);
     c.style.transform = `translateY(${(1 - s) * -0.5}em) scale(${1 + (1 - s) * 0.6})`;
   });
   reveals.forEach((r, i) => { r.style.transform = `translateY(${(1 - spring(t - T_TITLE - 0.25 - i * 0.09, 230, 28)) * 105}%)`; });
-  dock.style.transform = `translateY(${(1 - spring(t - T_TITLE - 0.55, 240, 28)) * 110}%)`;
   if (t >= T_TITLE + 0.8 && !document.body.classList.contains('locked')) $('#cue').classList.add('on');
 }
 const qT = new URLSearchParams(location.search).get('t');
